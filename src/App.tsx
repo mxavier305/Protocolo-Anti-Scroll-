@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import React from 'react';
 import { 
   CheckCircle2, 
   Smartphone, 
@@ -25,23 +26,25 @@ const CTA_BUY_URL = "#"; // Target URL for purchase
 
 export default function App() {
 
+  const scrollToCheckout = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const element = document.getElementById('checkout');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-bg-dark selection:bg-primary selection:text-bg-dark bg-mesh">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-bg-dark/80 backdrop-blur-md border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-center">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
               <Brain className="w-5 h-5 text-bg-dark" />
             </div>
             <span className="font-display font-bold text-lg tracking-tight">PROTOCOLO <span className="text-primary">ANTI-SCROLL</span></span>
           </div>
-          <a 
-            href={CTA_BUY_URL}
-            className="hidden md:flex bg-primary hover:bg-primary-dark text-bg-dark px-5 py-2 rounded-full font-bold text-sm transition-all glow-blue items-center gap-2"
-          >
-            Acesso Imediato <ChevronRight className="w-4 h-4" />
-          </a>
         </div>
       </header>
 
@@ -60,11 +63,12 @@ export default function App() {
               Você senta pra fazer algo importante… <span className="text-primary">e acaba no celular sem nem perceber.</span>
             </h1>
             <p className="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-              Recupere seu foco e controle mental em 21 dias mesmo que hoje sua mente fuja de tudo que exige esforço.
+              Comece a recuperar seu foco e controle mental em 7 dias mesmo que hoje sua mente fuja de tudo que exige esforço.
             </p>
 
-            {/* Credibility Elements */}
-            <div className="flex flex-col items-center gap-6">
+            <div className="flex flex-col items-center">
+              {/* Credibility Elements */}
+              <div className="flex flex-col items-center gap-6">
               <div className="flex items-center gap-4 bg-white/5 border border-white/10 px-6 py-3 rounded-full">
                 <div className="flex -space-x-2">
                   {[1,2,3,4].map(i => (
@@ -103,7 +107,8 @@ export default function App() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
+        </motion.div>
         </div>
       </section>
 
@@ -116,24 +121,15 @@ export default function App() {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="relative aspect-video w-full rounded-[32px] overflow-hidden border-4 border-primary/20 glow-blue bg-black group cursor-pointer"
+              className="relative aspect-video w-full rounded-[32px] overflow-hidden border-4 border-primary/20 glow-blue bg-black"
             >
-              {/* Placeholder UI for Video */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-t from-bg-dark to-transparent">
-                <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-2xl">
-                  <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[18px] border-l-bg-dark border-b-[10px] border-b-transparent ml-1" />
-                </div>
-              </div>
-              
-              {/* Optional: Actual iframe could go here if user provides URL */}
-              {/* <iframe className="w-full h-full" src="https://www.youtube.com/embed/XXXXX" title="VSL" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> */}
+              <img
+                src="https://i.imgur.com/QkrMygY.jpeg"
+                alt="Main Visual"
+                className="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
+              />
             </motion.div>
-            <p className="mt-6 font-display font-bold text-xl md:text-2xl uppercase tracking-widest text-primary">
-              clique para ver: o segredo da dopamina
-            </p>
-            <div className="mt-3 flex items-center justify-center gap-2 text-xs text-slate-500 font-bold uppercase tracking-widest">
-              <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse" /> Vídeo Exclusivo para Alunos e Interessados
-            </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -244,7 +240,7 @@ export default function App() {
           
           <div className="bg-bg-dark/5 backdrop-blur-sm rounded-[40px] p-10 md:p-16 border border-bg-dark/10 inline-block text-left shadow-2xl">
             <p className="text-2xl md:text-3xl font-bold mb-10 flex items-center gap-3">
-              <Zap className="w-8 h-8 fill-bg-dark" /> ⚡ Inclui:
+              <Zap className="w-8 h-8 fill-bg-dark text-[#000000]" /> ⚡ Inclui:
             </p>
             <div className="space-y-8">
               <div className="flex items-center gap-6 text-xl md:text-2xl font-bold group">
@@ -257,7 +253,7 @@ export default function App() {
               </div>
               <div className="flex items-center gap-6 text-xl md:text-2xl font-bold group">
                 <div className="w-16 h-16 bg-bg-dark text-primary rounded-2xl flex items-center justify-center text-3xl shadow-lg transform group-hover:scale-110 transition-transform">🧠</div>
-                <span>Reprogramação do foco em 21 dias</span>
+                <span>Reprogramação do foco em poucos dias</span>
               </div>
             </div>
           </div>
@@ -443,7 +439,7 @@ export default function App() {
       </section>
 
       {/* Pricing Section */}
-      <div className="pt-10 text-center">
+      <div id="checkout" className="pt-10 text-center">
         <motion.p 
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -551,7 +547,8 @@ export default function App() {
         </div>
 
         <a 
-          href={CTA_BUY_URL}
+          href="#checkout"
+          onClick={scrollToCheckout}
           className="inline-flex bg-primary hover:bg-primary-dark text-bg-dark px-8 md:px-16 py-6 md:py-8 rounded-3xl font-bold text-xl md:text-3xl transition-all glow-blue items-center gap-4 hover:scale-105 active:scale-95 shadow-[0_0_60px_rgba(0,229,255,0.2)]"
         >
           QUERO RETOMAR O CONTROLE DA MINHA VIDA <ArrowRight className="w-8 h-8" />
