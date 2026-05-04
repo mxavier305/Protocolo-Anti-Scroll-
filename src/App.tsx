@@ -22,7 +22,7 @@ import {
 } from 'lucide-react';
 import { motion } from 'motion/react';
 
-const CTA_BUY_URL = "#"; // Target URL for purchase
+const CTA_BUY_URL = "https://pay.lowify.com.br/checkout?product_id=XorCrD"; // Target URL for purchase
 
 export default function App() {
 
