@@ -60,10 +60,10 @@ export default function App() {
               ⚠️ Seu foco não sumiu. Ele foi roubado.
             </span>
             <h1 className="text-4xl md:text-7xl font-display font-bold leading-[1.1] mb-8">
-              Você senta pra fazer algo importante… <span className="text-primary">e acaba no celular sem nem perceber.</span>
+              Você pega o celular por 2 minutos... <span className="text-primary">e 1 hora depois ainda está rolando a tela.</span>
             </h1>
             <p className="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-              Comece a recuperar seu foco e controle mental em 7 dias mesmo que hoje sua mente fuja de tudo que exige esforço.
+              Descubra o método usado por mais de 5.240 pessoas para largar o vício de ficar rolando a tela — sem precisar de força de vontade.
             </p>
 
             <div className="flex flex-col items-center">
@@ -145,26 +145,25 @@ export default function App() {
               
               <div className="space-y-8 text-lg md:text-2xl text-slate-300 leading-relaxed">
                 <p>
-                  Você abre o Instagram <span className="text-primary font-bold">“só 5 minutos”</span>... <br />
-                  <span className="text-slate-500">e perde horas.</span>
+                  Você abre o celular <span className="text-primary font-bold">"só pra checar uma coisa"</span>... <br />
                 </p>
 
                 <p>
-                  Tenta focar... <br />
-                  <span className="text-slate-500">mas sua mente <span className="text-primary italic">foge</span>.</span>
+                  Tenta parar... <br />
+                  <span className="text-slate-500">mas <span className="text-primary italic">algo</span> te puxa de volta.</span>
                 </p>
 
                 <div className="py-6">
-                  <p className="text-slate-500 uppercase tracking-widest text-xs font-bold mb-3">E no fundo, você sabe:</p>
-                  <p className="text-2xl md:text-4xl text-white font-bold border-l-4 border-primary pl-6 py-4 bg-primary/5 rounded-r-2xl">
-                    “Eu tô desperdiçando minha vida.”
+                  <p className="text-slate-500 uppercase tracking-widest text-xs font-bold mb-3">Você sente isso:</p>
+                  <p className="text-xl md:text-3xl text-white font-bold border-l-4 border-primary pl-6 py-4 bg-primary/5 rounded-r-2xl leading-tight">
+                    "Eu sei que tô perdendo tempo — mas não consigo parar."
                   </p>
                 </div>
 
                 <div className="space-y-2">
-                  <p className="text-slate-400">Não é falta de disciplina.</p>
+                  <p className="text-slate-400">Não é sua culpa.</p>
                   <p className="text-2xl md:text-3xl font-bold text-white">
-                    Seu cérebro foi <span className="text-primary underline underline-offset-8 decoration-4">viciado</span> pra isso.
+                    Mas se <span className="text-primary underline underline-offset-8 decoration-4">continuar assim</span> <br className="hidden md:block" /> vai ser.
                   </p>
                 </div>
               </div>
@@ -491,9 +490,20 @@ export default function App() {
               SIM, QUERO COMEÇAR AGORA <ChevronRight className="w-6 h-6" />
             </a>
 
-            <p className="mt-8 text-xs text-slate-500 flex items-center justify-center gap-2">
-              <Lock className="w-3 h-3" /> Pagamento 100% Seguro & Criptografado
-            </p>
+            <div className="mt-4 space-y-1 text-slate-500 text-[11px] flex flex-col items-center opacity-80">
+              <div className="flex items-center gap-1.5">
+                <Zap className="w-3 h-3 text-primary" /> Acesso imediato
+              </div>
+              <div className="flex items-center gap-1.5">
+                <Clock className="w-3 h-3 text-primary" /> Aplicação em poucos minutos
+              </div>
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-3 h-3 text-primary" /> Funciona já nos primeiros dias
+              </div>
+              <div className="flex items-center gap-1.5">
+                <Lock className="w-3 h-3 text-primary" /> Pagamento 100% Seguro & Criptografado
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -551,11 +561,23 @@ export default function App() {
           onClick={scrollToCheckout}
           className="inline-flex bg-primary hover:bg-primary-dark text-bg-dark px-8 md:px-16 py-6 md:py-8 rounded-3xl font-bold text-xl md:text-3xl transition-all glow-blue items-center gap-4 hover:scale-105 active:scale-95 shadow-[0_0_60px_rgba(0,229,255,0.2)]"
         >
-          QUERO RETOMAR O CONTROLE DA MINHA VIDA <ArrowRight className="w-8 h-8" />
+          Quero recuperar meu foco hoje <ArrowRight className="w-8 h-8" />
         </a>
-        <p className="mt-6 text-slate-500 text-xs md:text-sm font-medium flex items-center justify-center gap-2">
-          🔒 Compra segura | Acesso imediato | Garantia de 7 dias
-        </p>
+
+        <div className="mt-6 space-y-1 text-slate-500 text-xs md:text-sm flex flex-col items-center opacity-80">
+          <div className="flex items-center gap-1.5">
+            <Zap className="w-3 h-3 md:w-3.5 md:h-3.5 text-primary" /> Acesso imediato
+          </div>
+          <div className="flex items-center gap-1.5">
+            <Clock className="w-3 h-3 md:w-3.5 md:h-3.5 text-primary" /> Aplicação em poucos minutos
+          </div>
+          <div className="flex items-center gap-1.5">
+            <CheckCircle2 className="w-3 h-3 md:w-3.5 md:h-3.5 text-primary" /> Funciona já nos primeiros dias
+          </div>
+          <div className="flex items-center gap-1.5">
+            <Lock className="w-3 h-3 md:w-3.5 md:h-3.5 text-primary" /> Pagamento 100% Seguro & Criptografado
+          </div>
+        </div>
       </section>
 
       {/* FAQ */}
