@@ -586,10 +586,11 @@ export default function App() {
           <h2 className="text-3xl text-center mb-10">Perguntas Frequentes</h2>
           <div className="space-y-6">
             {[
-              { q: "Preciso deletar minhas redes sociais?", a: "Não. O objetivo é reprogramar seu sistema de recompensa para que você use com moderação e controle, não o contrário." },
-              { q: "Tenho déficit de atenção, funciona para mim?", a: "Sim. O protocolo foi projetado justamente para mentes inquietas que sofrem com excesso de informação." },
-              { q: "Como recebo o acesso?", a: "Imediatamente no seu e-mail após a confirmação do pagamento." },
-              { q: "Posso parcelar?", a: "Sim, em até 5x no cartão ou à vista no PIX." }
+              { q: "Preciso deletar minhas redes sociais?", a: "Não. O método ensina como usar o celular sem perder o controle da sua atenção." },
+              { q: "Tenho dificuldade de foco, funciona para mim?", a: "Sim. O conteúdo foi criado justamente para pessoas que sofrem com distração, procrastinação e excesso de celular." },
+              { q: "Como recebo o acesso?", a: "O acesso é enviado automaticamente logo após a confirmação do pagamento." },
+              { q: "O acesso é vitalício?", a: "Sim. Você poderá acessar o conteúdo quando quiser." },
+              { q: "Em quanto tempo começo a ver resultado?", a: "Muitas pessoas já percebem diferença nos primeiros dias aplicando o método." }
             ].map((faq, idx) => (
               <details key={idx} className="group bg-card rounded-2xl border border-white/5 p-6 cursor-pointer">
                 <summary className="font-bold flex items-center justify-between list-none">
