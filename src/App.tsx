@@ -226,15 +226,29 @@ export default function App() {
               <p className="text-slate-400 relative z-10">{item.desc}</p>
             </motion.div>
           ))}
+        <div className="mt-16 text-center">
+          <p className="text-slate-400 mb-6 italic text-lg lg:text-xl max-w-2xl mx-auto">
+            “Existe um motivo psicológico que faz você perder horas no celular sem perceber…”
+          </p>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => document.getElementById('solution')?.scrollIntoView({ behavior: 'smooth' })}
+            className="group relative bg-primary text-bg-dark px-10 py-6 rounded-full font-black text-lg md:text-xl uppercase tracking-tighter shadow-[0_0_50px_rgba(34,211,238,0.3)] hover:shadow-[0_0_70px_rgba(34,211,238,0.5)] transition-all"
+          >
+            QUERO ENTENDER COMO SAIR DISSO
+            <ArrowRight className="w-6 h-6 inline-block ml-2 group-hover:translate-x-1 transition-transform" />
+          </motion.button>
         </div>
-      </section>
+      </div>
+    </section>
 
-      {/* The Solution Introduction */}
-      <section className="py-16 bg-primary text-bg-dark px-6">
+    {/* The Solution Introduction */}
+    <section id="solution" className="py-16 bg-primary text-bg-dark px-6">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-5xl md:text-7xl mb-8 font-display font-bold tracking-tight">Protocolo <span className="text-black">Anti-Scroll</span></h2>
-          <p className="text-xl md:text-3xl font-bold mb-16 max-w-3xl mx-auto leading-tight">
-            O passo a passo exato pra você parar de perder horas no celular e voltar a ter controle da sua mente — <span className="underline decoration-bg-dark/20">sem depender de força de vontade.</span>
+          <p className="text-xl md:text-3xl font-bold mb-16 max-w-3xl mx-auto leading-tight text-black">
+            O método exato para parar de perder horas no celular e recuperar o controle da sua atenção — <span className="underline decoration-black/20">sem depender de disciplina ou força de vontade.</span>
           </p>
           
           <div className="bg-bg-dark/5 backdrop-blur-sm rounded-[40px] p-10 md:p-16 border border-bg-dark/10 inline-block text-left shadow-2xl">
@@ -390,49 +404,65 @@ export default function App() {
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-5xl text-center mb-10 underline decoration-primary/30 underline-offset-8">Resultados Reais</h2>
           <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
-            {[
-              {
-                name: "Lucas Pereira",
-                role: "Programador",
-                text: "Eu não conseguia codar por 20 minutos sem abrir o Twitter. Esse protocolo me salvou. Minha produtividade dobrou em uma semana.",
-                rating: 5
-              },
-              {
-                name: "Mariana Costa",
-                role: "Estudante",
-                text: "Sempre me sentia culpada por perder tempo no TikTok. Hoje eu leio 40 páginas por dia sem esforço. É bizarro o quanto o cérebro muda.",
-                rating: 5
-              },
-              {
-                name: "Roberto Silva",
-                role: "Empreendedor",
-                text: "A clareza mental que ganhei vale 10x o valor do protocolo. Recomendo para todo mundo que vive estressado.",
-                rating: 5
-              },
-              {
-                name: "Ana Julia",
-                role: "Designer",
-                text: "Meus níveis de ansiedade caíram drasticamente. Parar de scrolar foi a melhor decisão que tomei no ano.",
-                rating: 5
-              },
-              {
-                name: "Henrique",
-                role: "Freelancer",
-                text: "O guia do sono é sensacional. Acordo descansado de verdade pela primeira vez em anos.",
-                rating: 5
-              }
-            ].map((t, idx) => (
-              <div key={idx} className="break-inside-avoid-column bg-card p-8 rounded-2xl border border-white/5 hover:border-primary/20 transition-all">
-                <div className="flex gap-1 mb-4">
-                  {[...Array(t.rating)].map((_, i) => <Star key={i} className="w-4 h-4 fill-primary text-primary" />)}
+              {[
+                {
+                  name: "Lucas Pereira",
+                  location: "São Paulo, SP",
+                  role: "Programador",
+                  avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=256&h=256&auto=format&fit=crop",
+                  text: "O mais bizarro foi perceber que eu ficava rolando a tela no automático toda vez que ficava ansioso. Depois que comecei a aplicar isso, minha produtividade mudou demais.",
+                  rating: 5
+                },
+                {
+                  name: "Mariana Costa",
+                  location: "Belo Horizonte, MG",
+                  role: "Estudante",
+                  avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=256&h=256&auto=format&fit=crop",
+                  text: "Sempre me sentia culpada por perder tempo no TikTok. Hoje eu leio 40 páginas por dia sem esforço. É bizarro o quanto o cérebro muda.",
+                  rating: 5
+                },
+                {
+                  name: "Roberto Silva",
+                  location: "Curitiba, PR",
+                  role: "Empreendedor",
+                  avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=256&h=256&auto=format&fit=crop",
+                  text: "A clareza mental que ganhei vale 10x o valor do protocolo. Recomendo para todo mundo que vive estressado.",
+                  rating: 5
+                },
+                {
+                  name: "Ana Julia",
+                  location: "Rio de Janeiro, RJ",
+                  role: "Designer",
+                  avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=256&h=256&auto=format&fit=crop",
+                  text: "Meus níveis de ansiedade caíram drasticamente. Parar de scrolar foi a melhor decisão que tomei no ano.",
+                  rating: 5
+                },
+                {
+                  name: "Henrique",
+                  location: "Florianópolis, SC",
+                  role: "Freelancer",
+                  avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=256&h=256&auto=format&fit=crop",
+                  text: "Meu tempo no celular caiu quase pela metade em poucos dias. O melhor foi recuperar minha concentração pra trabalhar e estudar.",
+                  rating: 5
+                }
+              ].map((t, idx) => (
+                <div key={idx} className="break-inside-avoid-column bg-card p-8 rounded-2xl border border-white/5 hover:border-primary/20 transition-all">
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(t.rating)].map((_, i) => <Star key={i} className="w-4 h-4 fill-primary text-primary" />)}
+                  </div>
+                  <p className="text-slate-300 italic mb-6 leading-relaxed">"{t.text}"</p>
+                  <div className="flex items-center gap-4">
+                    <img src={t.avatar} alt={t.name} className="w-12 h-12 rounded-full object-cover border-2 border-primary/20" referrerPolicy="no-referrer" />
+                    <div>
+                      <p className="font-bold">{t.name}</p>
+                      <p className="text-xs text-slate-500 uppercase tracking-widest">{t.role}</p>
+                      <p className="text-[10px] text-slate-500 font-normal uppercase tracking-wider opacity-60">
+                        {t.location}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <p className="text-slate-300 italic mb-6 leading-relaxed">"{t.text}"</p>
-                <div>
-                  <p className="font-bold">{t.name}</p>
-                  <p className="text-xs text-slate-500 uppercase tracking-widest">{t.role}</p>
-                </div>
-              </div>
-            ))}
+              ))}
           </div>
         </div>
       </section>
@@ -444,7 +474,7 @@ export default function App() {
           whileInView={{ opacity: 1, y: 0 }}
           className="text-amber-500/80 font-bold text-sm flex items-center justify-center gap-2"
         >
-          ⚠️ R$17 por tempo limitado
+          ⚠️ R$19,99 por tempo limitado
         </motion.p>
       </div>
       <section className="pb-16 pt-6 px-6 text-center">
@@ -469,16 +499,16 @@ export default function App() {
                 <li className="flex justify-between w-full max-w-[200px] font-bold border-t border-white/10 pt-1 text-white/60"><span>SOMA TOTAL:</span> <span>R$ 298,00</span></li>
               </ul>
               <div className="bg-red-500/10 text-red-500 text-[10px] font-bold py-1 px-3 rounded-md inline-block">
-                VOCÊ ECONOMIZA: R$ 281,00
+                VOCÊ ECONOMIZA: R$ 278,01
               </div>
             </div>
 
             <p className="text-slate-200 font-bold uppercase tracking-widest text-xs mb-2">Acesso Completo Hoje Por:</p>
             <div className="flex items-center justify-center gap-2 mb-8">
               <span className="text-2xl font-bold text-primary">R$</span>
-              <span className="text-7xl font-display font-bold text-primary">17</span>
+              <span className="text-7xl font-display font-bold text-primary">19</span>
               <div className="text-left">
-                <span className="block text-2xl font-bold text-primary">,00</span>
+                <span className="block text-2xl font-bold text-primary">,99</span>
                 <span className="text-xs text-slate-500 uppercase tracking-tighter">Pagamento Único</span>
               </div>
             </div>
@@ -514,19 +544,34 @@ export default function App() {
           <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl -z-10" />
           
           {/* Professional Guarantee Badge */}
-          <div className="relative flex-shrink-0">
-            <div className="w-40 h-40 rounded-full border-4 border-dashed border-primary/20 flex items-center justify-center animate-[spin_20s_linear_infinite]">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-[10px] font-bold text-primary/40 uppercase tracking-[0.2em] whitespace-nowrap">
-                  Satisfação Garantida • Risco Zero • 
-                </span>
-              </div>
-            </div>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-28 h-28 bg-primary rounded-full shadow-[0_0_40px_rgba(0,229,255,0.4)] flex flex-col items-center justify-center text-bg-dark">
-                <ShieldCheck className="w-10 h-10 mb-1" />
-                <span className="text-2xl font-display font-bold leading-none">7</span>
-                <span className="text-[10px] font-bold uppercase tracking-tighter">Dias</span>
+          <div className="relative flex-shrink-0 group">
+            <div className="absolute inset-0 bg-primary/20 rounded-full blur-2xl group-hover:bg-primary/30 transition-all duration-500" />
+            <div className="relative w-48 h-48 flex items-center justify-center">
+              {/* Rotating outer ring */}
+              <svg className="absolute inset-0 w-full h-full animate-[spin_30s_linear_infinite]" viewBox="0 0 100 100">
+                <path
+                  id="curve"
+                  d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
+                  fill="transparent"
+                />
+                <text className="text-[7.5px] font-bold uppercase tracking-[0.25em] fill-primary/60">
+                  <textPath xlinkHref="#curve">
+                    Garantia Incondicional • Risco Zero • Satisfação Total • 
+                  </textPath>
+                </text>
+              </svg>
+              
+              {/* Inner Seal */}
+              <div className="relative w-32 h-32 bg-gradient-to-br from-primary via-primary/90 to-primary/80 rounded-full shadow-[0_0_50px_rgba(0,229,255,0.3)] flex flex-col items-center justify-center text-bg-dark border-4 border-white/10 overflow-hidden">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.4),transparent)]" />
+                <ShieldCheck className="w-12 h-12 mb-0.5 relative z-10" />
+                <div className="flex flex-col items-center relative z-10">
+                  <span className="text-4xl font-display font-black leading-none -mb-1">7</span>
+                  <span className="text-xs font-black uppercase tracking-widest">Dias</span>
+                </div>
+                <div className="absolute bottom-3 text-[7px] font-black uppercase tracking-[0.2em] opacity-40">
+                  Seal of Trust
+                </div>
               </div>
             </div>
           </div>
