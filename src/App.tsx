@@ -18,7 +18,8 @@ import {
   MonitorOff,
   BatteryCharging,
   Users,
-  Fingerprint
+  Fingerprint,
+  Sparkles
 } from 'lucide-react';
 import { motion } from 'motion/react';
 
@@ -52,9 +53,9 @@ export default function App() {
       <section className="pt-24 pb-12 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <span className="inline-block py-1 px-4 rounded-full bg-primary/10 text-primary border border-primary/20 text-xs font-bold uppercase tracking-widest mb-6">
               ⚠️ Seu foco não sumiu. Ele foi roubado.
@@ -118,9 +119,10 @@ export default function App() {
           {/* Video VSL Section */}
           <div className="mb-12">
             <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, scale: 0.98 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
               className="relative aspect-video w-full rounded-[32px] overflow-hidden border-4 border-primary/20 glow-blue bg-black"
             >
               <img
@@ -134,9 +136,10 @@ export default function App() {
 
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 0, x: -15 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
               className="space-y-8"
             >
               <h2 className="text-4xl md:text-6xl font-display font-bold leading-tight">
@@ -216,7 +219,8 @@ export default function App() {
           ].map((item, idx) => (
             <motion.div
               key={idx}
-              whileHover={{ y: -5 }}
+              whileHover={{ y: -4, scale: 1.01 }}
+              transition={{ type: "spring", stiffness: 400, damping: 25 }}
               className="bg-card p-10 rounded-3xl border border-white/5 relative overflow-hidden group"
             >
               <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -231,8 +235,8 @@ export default function App() {
             “Existe um motivo psicológico que faz você perder horas no celular sem perceber…”
           </p>
           <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.02, y: -2 }}
+            whileTap={{ scale: 0.98 }}
             onClick={() => document.getElementById('solution')?.scrollIntoView({ behavior: 'smooth' })}
             className="group relative bg-primary text-bg-dark px-10 py-6 rounded-full font-black text-lg md:text-xl uppercase tracking-tighter shadow-[0_0_50px_rgba(34,211,238,0.3)] hover:shadow-[0_0_70px_rgba(34,211,238,0.5)] transition-all"
           >
@@ -261,8 +265,10 @@ export default function App() {
                 <span>Acesso imediato</span>
               </div>
               <div className="flex items-center gap-6 text-xl md:text-2xl font-bold group">
-                <div className="w-16 h-16 bg-bg-dark text-primary rounded-2xl flex items-center justify-center text-3xl shadow-lg transform group-hover:scale-110 transition-transform">🎯</div>
-                <span>Metas diárias simples</span>
+                <div className="w-16 h-16 bg-bg-dark text-primary rounded-2xl flex items-center justify-center text-3xl shadow-lg transform group-hover:scale-110 transition-transform">
+                  <Sparkles className="w-8 h-8 text-primary" />
+                </div>
+                <span>Dopamina Profunda e Foco Inabalável</span>
               </div>
               <div className="flex items-center gap-6 text-xl md:text-2xl font-bold group">
                 <div className="w-16 h-16 bg-bg-dark text-primary rounded-2xl flex items-center justify-center text-3xl shadow-lg transform group-hover:scale-110 transition-transform">🧠</div>
@@ -306,10 +312,10 @@ export default function App() {
             ].map((item, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.2 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: idx * 0.15, ease: "easeOut" }}
                 className="flex flex-col gap-6"
               >
                 <div className="bg-primary text-bg-dark w-16 h-16 rounded-2xl flex items-center justify-center font-display text-2xl font-bold">
@@ -340,10 +346,17 @@ export default function App() {
               "Autoconfiança ao cumprir o que prometeu a si mesmo",
               "Clareza mental para planejar seu futuro financeiro"
             ].map((benefit, idx) => (
-              <div key={idx} className="flex items-start gap-4 p-6 bg-card rounded-2xl border border-white/5">
+              <motion.div 
+                key={idx} 
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="flex items-start gap-4 p-6 bg-card rounded-2xl border border-white/5"
+              >
                 <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0" />
                 <span className="text-lg text-slate-200">{benefit}</span>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -446,7 +459,14 @@ export default function App() {
                   rating: 5
                 }
               ].map((t, idx) => (
-                <div key={idx} className="break-inside-avoid-column bg-card p-8 rounded-2xl border border-white/5 hover:border-primary/20 transition-all">
+                <motion.div 
+                  key={idx} 
+                  initial={{ opacity: 0, scale: 0.98 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  className="break-inside-avoid-column bg-card p-8 rounded-2xl border border-white/5 hover:border-primary/20 transition-all"
+                >
                   <div className="flex gap-1 mb-4">
                     {[...Array(t.rating)].map((_, i) => <Star key={i} className="w-4 h-4 fill-primary text-primary" />)}
                   </div>
@@ -461,7 +481,7 @@ export default function App() {
                       </p>
                     </div>
                   </div>
-                </div>
+              </motion.div>
               ))}
           </div>
         </div>
@@ -470,8 +490,9 @@ export default function App() {
       {/* Pricing Section */}
       <div id="checkout" className="pt-10 text-center">
         <motion.p 
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 5 }}
           whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
           className="text-amber-500/80 font-bold text-sm flex items-center justify-center gap-2"
         >
           ⚠️ R$19,99 por tempo limitado
@@ -480,9 +501,10 @@ export default function App() {
       <section className="pb-16 pt-6 px-6 text-center">
         <div className="max-w-md mx-auto">
           <motion.div
-            initial={{ scale: 0.95, opacity: 0 }}
+            initial={{ scale: 0.98, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             className="bg-card rounded-[40px] border-4 border-primary p-12 text-center relative shadow-2xl"
           >
             <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-primary text-bg-dark font-bold py-2 px-8 rounded-full text-sm uppercase tracking-widest whitespace-nowrap">
@@ -604,7 +626,7 @@ export default function App() {
         <a 
           href="#checkout"
           onClick={scrollToCheckout}
-          className="inline-flex bg-primary hover:bg-primary-dark text-bg-dark px-8 md:px-16 py-6 md:py-8 rounded-3xl font-bold text-xl md:text-3xl transition-all glow-blue items-center gap-4 hover:scale-105 active:scale-95 shadow-[0_0_60px_rgba(0,229,255,0.2)]"
+          className="inline-flex bg-primary hover:bg-primary-dark text-bg-dark px-8 md:px-16 py-6 md:py-8 rounded-3xl font-bold text-xl md:text-3xl transition-all glow-blue items-center gap-4 hover:scale-102 active:scale-98 shadow-[0_0_60px_rgba(0,229,255,0.2)]"
         >
           Quero recuperar meu foco hoje <ArrowRight className="w-8 h-8" />
         </a>
