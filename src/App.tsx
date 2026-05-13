@@ -87,14 +87,19 @@ export default function App() {
                   <ShieldCheck className="w-3 h-3" /> Acesso imediato • Compra Segura
                 </p>
                 
-                <div className="flex flex-col items-center pt-4 border-t border-white/5 w-full">
-                  <div className="flex items-center justify-center gap-1 text-yellow-400 mb-1">
-                    {[1,2,3,4,5].map(i => <Star key={i} className="w-3 h-3 md:w-3.5 md:h-3.5 fill-yellow-400" />)}
+                  <div className="flex flex-col items-center pt-4 border-t border-white/5 w-full">
+                    <div className="flex items-center justify-center gap-1.5 text-yellow-500 mb-1">
+                      {[1,2,3,4,5].map(i => <Star key={i} className="w-3 h-3 md:w-3.5 md:h-3.5 fill-yellow-500" />)}
+                      <span className="text-[10px] text-yellow-500/80 font-black ml-1">(4.9/5)</span>
+                    </div>
+                    <p className="text-[10px] md:text-xs text-slate-400 uppercase font-bold tracking-widest flex items-center gap-2">
+                      <span className="relative flex h-2 w-2">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                      </span>
+                      <span className="text-white font-black">+5.240 Alunos</span> Transformados
+                    </p>
                   </div>
-                  <p className="text-[10px] md:text-xs text-slate-400 uppercase font-bold tracking-widest">
-                    <span className="text-white font-black">+5.240 Alunos</span> Transformados
-                  </p>
-                </div>
               </div>
             </div>
           </motion.div>
@@ -225,12 +230,12 @@ export default function App() {
 
       {/* The Problem Section */}
       <section className="py-16 px-6 overflow-hidden">
-        <div className="max-w-4xl mx-auto text-center mb-10">
-          <h2 className="text-3xl md:text-5xl mb-6">O Sequestro da sua <span className="text-primary">Dopamina</span></h2>
-          <p className="text-slate-400 leading-relaxed text-lg italic">
-            "Você não é preguiçoso. Você está apenas com o sistema de recompensa do seu cérebro quebrado."
-          </p>
-        </div>
+          <div className="max-w-4xl mx-auto text-center mb-10">
+            <h2 className="text-3xl md:text-5xl mb-6">O Sequestro do seu <span className="text-primary italic">Sistema de Recompensa</span></h2>
+            <p className="text-slate-400 leading-relaxed text-lg max-w-2xl mx-auto">
+              Sua dopamina natural foi hackeada por engenheiros do Vale do Silício. O objetivo? Manter você conectado, custe o que custar.
+            </p>
+          </div>
         
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
           {[
@@ -340,6 +345,22 @@ export default function App() {
       {/* 3 Phases Section */}
       <section className="py-16 px-6">
         <div className="max-w-7xl mx-auto">
+          {/* Scientific Foundation Ribbon */}
+          <div className="flex flex-wrap justify-center gap-8 mb-20 opacity-50 grayscale contrast-125">
+            <div className="flex items-center gap-2">
+              <Brain className="w-5 h-5" />
+              <span className="text-[10px] font-black uppercase tracking-widest">Baseado em Neuroplasticidade</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Zap className="w-5 h-5" />
+              <span className="text-[10px] font-black uppercase tracking-widest">Sistema de Dopamina</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Fingerprint className="w-5 h-5" />
+              <span className="text-[10px] font-black uppercase tracking-widest">Metodologia Exclusiva</span>
+            </div>
+          </div>
+
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-5xl mb-4">O Caminho da <span className="text-primary">Liberdade</span></h2>
             <p className="text-slate-400">Dividido em 3 fases estratégicas para garantir que você não desista.</p>
@@ -471,11 +492,15 @@ export default function App() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 bg-bg-dark px-6 overflow-hidden">
+      <section className="py-24 bg-bg-dark px-6 overflow-hidden relative">
+        <div className="absolute top-1/2 left-0 w-full h-[500px] bg-primary/5 blur-[120px] -z-10 rotate-12" />
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-5xl text-center mb-16 underline decoration-primary/30 underline-offset-8">Resultados Reais</h2>
+          <div className="text-center mb-16 space-y-4">
+            <h2 className="text-3xl md:text-6xl font-display font-black">RESULTADOS <span className="text-primary underline decoration-primary/30 underline-offset-8">REAIS</span></h2>
+            <p className="text-slate-500 uppercase tracking-[0.4em] font-black text-xs">Prova Social • Verificado</p>
+          </div>
           
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-20">
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-24">
             {/* Phone Mockup Container */}
             <div className="relative group">
               {/* Phone Frame */}
@@ -537,13 +562,13 @@ export default function App() {
               </div>
 
               <div className="grid grid-cols-2 gap-4">
-                <div className="bg-card p-6 rounded-2xl border border-white/5">
-                  <div className="text-primary font-bold text-2xl mb-1">98%</div>
-                  <div className="text-xs text-slate-500 uppercase font-bold tracking-tight">Taxa de Satisfação</div>
+                <div className="bg-card/50 p-6 rounded-3xl border border-white/5 backdrop-blur-sm group hover:border-primary/20 transition-colors">
+                  <div className="text-primary font-black text-3xl mb-1">98.7%</div>
+                  <div className="text-[10px] text-slate-500 uppercase font-black tracking-widest leading-tight">Taxa de <br/>Aprovação</div>
                 </div>
-                <div className="bg-card p-6 rounded-2xl border border-white/5">
-                  <div className="text-primary font-bold text-2xl mb-1">+5k</div>
-                  <div className="text-xs text-slate-500 uppercase font-bold tracking-tight">Alunos Ativos</div>
+                <div className="bg-card/50 p-6 rounded-3xl border border-white/5 backdrop-blur-sm group hover:border-primary/20 transition-colors">
+                  <div className="text-primary font-black text-3xl mb-1">+5.2k</div>
+                  <div className="text-[10px] text-slate-500 uppercase font-black tracking-widest leading-tight">Alunos <br/>Ativos</div>
                 </div>
               </div>
 
@@ -818,7 +843,62 @@ export default function App() {
           </div>
         </div>
       </footer>
-
+      
+      {/* Live Social Proof Notification */}
+      <LiveFeedback />
     </div>
+  );
+}
+
+function LiveFeedback() {
+  const [isVisible, setIsVisible] = React.useState(false);
+  const [currentIdx, setCurrentIdx] = React.useState(0);
+  
+  const notifications = [
+    { name: "Marcos S.", city: "São Paulo", time: "2 min atrás" },
+    { name: "Jéssica R.", city: "Curitiba", time: "5 min atrás" },
+    { name: "Thiago M.", city: "Belo Horizonte", time: "12 min atrás" },
+    { name: "Ana P.", city: "Rio de Janeiro", time: "18 min atrás" },
+    { name: "Ricardo L.", city: "Porto Alegre", time: "25 min atrás" },
+  ];
+
+  React.useEffect(() => {
+    const showInterval = setInterval(() => {
+      setIsVisible(true);
+      setTimeout(() => setIsVisible(false), 5000);
+      setCurrentIdx(prev => (prev + 1) % notifications.length);
+    }, 12000);
+
+    // Initial show
+    const initialShowTimeout = setTimeout(() => setIsVisible(true), 3000);
+    const initialHideTimeout = setTimeout(() => setIsVisible(false), 8000);
+
+    return () => {
+      clearInterval(showInterval);
+      clearTimeout(initialShowTimeout);
+      clearTimeout(initialHideTimeout);
+    };
+  }, [notifications.length]);
+
+  return (
+    <motion.div
+      initial={{ x: -100, opacity: 0 }}
+      animate={{ x: isVisible ? 0 : -100, opacity: isVisible ? 1 : 0 }}
+      className="fixed bottom-6 left-6 z-[60] bg-white text-bg-dark p-4 rounded-2xl shadow-2xl flex items-center gap-4 border border-white/20 hidden md:flex"
+    >
+      <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center relative">
+        <Users className="w-5 h-5 text-bg-dark" />
+        <span className="absolute top-0 right-0 w-3 h-3 bg-emerald-500 rounded-full border-2 border-white" />
+      </div>
+      <div className="text-left">
+        <p className="text-[10px] font-black uppercase tracking-widest text-slate-500 leading-none mb-1">Novo Acesso</p>
+        <p className="text-sm font-bold leading-tight">
+          {notifications[currentIdx].name} acaba de entrar
+        </p>
+        <p className="text-[10px] text-slate-400 font-medium">
+          {notifications[currentIdx].city} • {notifications[currentIdx].time}
+        </p>
+      </div>
+    </motion.div>
   );
 }
