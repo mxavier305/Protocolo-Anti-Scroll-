@@ -89,19 +89,8 @@ export default function App() {
             {/* Authority Grouping (Gestalt) */}
             <div className="flex flex-col items-center gap-8 py-8 border-t border-white/5">
               <div className="flex items-center gap-4 bg-white/5 border border-white/10 px-8 py-4 rounded-3xl backdrop-blur-sm">
-                <div className="flex -space-x-4">
-                  {[1,2,3,4,5].map(i => (
-                    <img 
-                      key={i}
-                      src={`https://i.pravatar.cc/150?u=a${i}`} 
-                      className="w-10 h-10 md:w-12 md:h-12 rounded-full border-4 border-bg-dark" 
-                      alt="User"
-                      referrerPolicy="no-referrer"
-                    />
-                  ))}
-                </div>
-                <div className="text-left">
-                  <div className="flex items-center gap-1 text-primary mb-1">
+                <div className="text-center">
+                  <div className="flex items-center justify-center gap-1 text-primary mb-1">
                     {[1,2,3,4,5].map(i => <Star key={i} className="w-3 h-3 md:w-4 md:h-4 fill-primary" />)}
                   </div>
                   <p className="text-[10px] md:text-xs text-slate-400 uppercase font-bold tracking-widest">
@@ -307,7 +296,7 @@ export default function App() {
           </h2>
           
           <p className="text-xl md:text-2xl font-medium mb-16 max-w-3xl mx-auto leading-relaxed text-slate-400">
-            A única metodologia testada por <span className="text-white font-bold">5.240 alunos</span> capaz de hackear o sistema de recompensa do seu cérebro e devolver sua liberdade em 7 dias.
+            A única metodologia testada por <span className="text-white font-bold">5.240 alunos</span> capaz de hackear o sistema de recompensa do seu cérebro e devolver sua liberdade em poucos dias.
           </p>
           
           <div className="grid md:grid-cols-2 gap-8 text-left">
