@@ -50,143 +50,189 @@ export default function App() {
       </header>
 
       {/* Hero Section */}
-      <section className="pt-24 pb-12 px-6">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="pt-28 pb-16 px-6">
+        <div className="max-w-7xl mx-auto flex flex-col items-center">
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-center w-full"
           >
-            <span className="inline-block py-1 px-4 rounded-full bg-primary/10 text-primary border border-primary/20 text-xs font-bold uppercase tracking-widest mb-6">
-              ⚠️ Seu foco não sumiu. Ele foi roubado.
+            <span className="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-primary/10 text-primary border border-primary/20 text-[10px] md:text-xs font-black uppercase tracking-[0.2em] mb-8 animate-pulse">
+              <Zap className="w-4 h-4 fill-primary" /> Alerta: Sua atenção está sendo monetizada
             </span>
-            <h1 className="text-4xl md:text-7xl font-display font-bold leading-[1.1] mb-8">
-              Você pega o celular por 2 minutos... <span className="text-primary">e 1 hora depois ainda está rolando a tela.</span>
+            
+            <h1 className="text-4xl md:text-8xl font-display font-black leading-[1] mb-8 tracking-tighter">
+              A DISTRAÇÃO <br />
+              <span className="text-primary italic">TE CUSTA CARO.</span>
             </h1>
-            <p className="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-              Descubra o método usado por mais de 5.240 pessoas para largar o vício de ficar rolando a tela — sem precisar de força de vontade.
+            
+            <p className="text-lg md:text-2xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed md:leading-[1.6]">
+              O protocolo neurológico que reprograma seu cérebro para quebrar o vício em dopamina barata <span className="text-white font-bold">em poucos dias.</span>
             </p>
 
-            <div className="flex flex-col items-center">
-              {/* Credibility Elements */}
-              <div className="flex flex-col items-center gap-6">
-              <div className="flex items-center gap-4 bg-white/5 border border-white/10 px-6 py-3 rounded-full">
-                <div className="flex -space-x-2">
-                  {[1,2,3,4].map(i => (
+            {/* Mobile-First Primary CTA */}
+            <div className="w-full max-w-md mx-auto mb-16">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={scrollToCheckout}
+                className="w-[90%] md:w-full bg-primary text-bg-dark py-6 md:py-8 rounded-3xl font-black text-xl md:text-2xl transition-all shadow-[0_20px_50px_rgba(0,229,255,0.3)] flex items-center justify-center gap-4 mx-auto"
+              >
+                QUERO MEU FOCO DE VOLTA <ArrowRight className="w-6 h-6" />
+              </motion.button>
+              <p className="text-[10px] text-slate-500 uppercase font-black tracking-widest mt-4 flex items-center justify-center gap-2">
+                <ShieldCheck className="w-3 h-3" /> Acesso imediato • Compra Segura
+              </p>
+            </div>
+
+            {/* Authority Grouping (Gestalt) */}
+            <div className="flex flex-col items-center gap-8 py-8 border-t border-white/5">
+              <div className="flex items-center gap-4 bg-white/5 border border-white/10 px-8 py-4 rounded-3xl backdrop-blur-sm">
+                <div className="flex -space-x-4">
+                  {[1,2,3,4,5].map(i => (
                     <img 
                       key={i}
-                      src={`https://i.pravatar.cc/100?img=${i+10}`} 
-                      className="w-8 h-8 rounded-full border-2 border-bg-dark" 
+                      src={`https://i.pravatar.cc/150?u=a${i}`} 
+                      className="w-10 h-10 md:w-12 md:h-12 rounded-full border-4 border-bg-dark" 
                       alt="User"
                       referrerPolicy="no-referrer"
                     />
                   ))}
                 </div>
-                <div className="text-left leading-tight">
-                  <div className="flex items-center gap-1 text-primary">
-                    <Star className="w-3 h-3 fill-primary" />
-                    <Star className="w-3 h-3 fill-primary" />
-                    <Star className="w-3 h-3 fill-primary" />
-                    <Star className="w-3 h-3 fill-primary" />
-                    <Star className="w-3 h-3 fill-primary" />
+                <div className="text-left">
+                  <div className="flex items-center gap-1 text-primary mb-1">
+                    {[1,2,3,4,5].map(i => <Star key={i} className="w-3 h-3 md:w-4 md:h-4 fill-primary" />)}
                   </div>
-                  <p className="text-[10px] text-slate-400 uppercase font-bold tracking-tighter">
-                    +5.240 pessoas reprogramadas
+                  <p className="text-[10px] md:text-xs text-slate-400 uppercase font-bold tracking-widest">
+                    <span className="text-white font-black">+5.240 Alunos</span> Transformados
                   </p>
                 </div>
               </div>
-
-              <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 opacity-50 grayscale contrast-125">
-                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest italic">
-                  <Brain className="w-4 h-4" /> Neurociência Aplicada
-                </div>
-                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest italic">
-                  <ShieldCheck className="w-4 h-4" /> Método Validado
-                </div>
-                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest italic outline-none">
-                  <Fingerprint className="w-4 h-4" /> Testado e Aprovado
-                </div>
-              </div>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* Identification Section */}
-      <section className="py-16 bg-card/30 border-y border-white/5 px-6">
-        <div className="max-w-5xl mx-auto">
-          {/* Video VSL Section */}
-          <div className="mb-12">
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.98 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-              className="relative aspect-video w-full rounded-[32px] overflow-hidden border-4 border-primary/20 glow-blue bg-black"
-            >
-              <img
-                src="https://i.imgur.com/QkrMygY.jpeg"
-                alt="Main Visual"
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-            </motion.div>
-          </div>
-
+      <section className="py-24 bg-slate-950 border-y border-white/5 px-6 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,229,255,0.03),transparent)]" />
+        <div className="max-w-5xl mx-auto relative z-10">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -15 }}
+              initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              className="space-y-8"
+              viewport={{ once: true }}
+              className="space-y-10"
             >
-              <h2 className="text-4xl md:text-6xl font-display font-bold leading-tight">
-                Isso soa <span className="text-primary">familiar</span>?
-              </h2>
+              <div className="space-y-4">
+                <span className="text-primary font-black text-xs uppercase tracking-[0.3em]">O Diagnóstico</span>
+                <h2 className="text-4xl md:text-6xl font-display font-black leading-[1.1]">
+                  POR QUE É TÃO <span className="text-primary italic">DIFÍCIL</span> PARAR?
+                </h2>
+              </div>
               
-              <div className="space-y-8 text-lg md:text-2xl text-slate-300 leading-relaxed">
-                <p>
-                  Você abre o celular <span className="text-primary font-bold">"só pra checar uma coisa"</span>... <br />
+              <div className="space-y-8 text-lg md:text-xl text-slate-400 leading-relaxed">
+                <p className="flex gap-4">
+                  <span className="text-primary font-bold">01.</span>
+                  <span>Você abre o Instagram <span className="text-white font-bold">"só pra checar uma notificação"</span> e 40 minutos depois ainda está lá.</span>
                 </p>
 
-                <p>
-                  Tenta parar... <br />
-                  <span className="text-slate-500">mas <span className="text-primary italic">algo</span> te puxa de volta.</span>
+                <p className="flex gap-4">
+                  <span className="text-primary font-bold">02.</span>
+                  <span>Seu cérebro está viciado em <span className="text-white font-bold italic">micro-recompensas</span> de dopamina que o algoritmo entrega de bandeja.</span>
                 </p>
 
-                <div className="py-6">
-                  <p className="text-slate-500 uppercase tracking-widest text-xs font-bold mb-3">Você sente isso:</p>
-                  <p className="text-xl md:text-3xl text-white font-bold border-l-4 border-primary pl-6 py-4 bg-primary/5 rounded-r-2xl leading-tight">
-                    "Eu sei que tô perdendo tempo — mas não consigo parar."
+                <div className="p-8 bg-primary/5 border-l-4 border-primary rounded-r-3xl">
+                  <p className="text-white font-black italic text-xl md:text-2xl leading-tight">
+                    "Eu sinto que minha vida está passando diante dos meus olhos... e eu estou apenas assistindo através de uma tela de 6 polegadas."
                   </p>
                 </div>
 
-                <div className="space-y-2">
-                  <p className="text-slate-400">Não é sua culpa.</p>
-                  <p className="text-2xl md:text-3xl font-bold text-white">
-                    Mas se <span className="text-primary underline underline-offset-8 decoration-4">continuar assim</span> <br className="hidden md:block" /> vai ser.
+                <div className="pt-6 border-t border-white/5">
+                  <p className="text-sm font-black uppercase tracking-widest text-slate-500 mb-4">A dura realidade:</p>
+                  <p className="text-2xl md:text-3xl text-white font-bold">
+                    O algoritmo é mais <span className="text-primary">inteligente</span> que sua força de vontade.
                   </p>
                 </div>
               </div>
             </motion.div>
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { icon: <Smartphone />, label: "Vício Digital" },
-                { icon: <Clock />, label: "Procrastinação" },
-                { icon: <Brain />, label: "Falta de Foco" },
-                { icon: <Zap />, label: "Ansiedade" }
-              ].map((item, idx) => (
-                <div key={idx} className="bg-card p-6 rounded-2xl border border-white/5 flex flex-col items-center text-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                    {item.icon}
-                  </div>
-                  <span className="text-sm font-bold uppercase tracking-wide">{item.label}</span>
-                </div>
-              ))}
+
+            <div className="relative">
+               <div className="absolute inset-0 bg-primary/20 blur-[100px] -z-10" />
+               <div className="grid grid-cols-1 gap-6">
+                {[
+                  { icon: <BatteryCharging className="rotate-90" />, title: "Energia Esgotada", desc: "Acordar cansado porque a última coisa que fez foi scrolar." },
+                  { icon: <MonitorOff />, title: "Foco Fragmentado", desc: "Não conseguir ler 5 páginas sem pegar no celular." },
+                  { icon: <Zap />, title: "Ansiedade Constante", desc: "A sensação de que está sempre perdendo algo importante." }
+                ].map((item, idx) => (
+                  <motion.div 
+                    key={idx}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: idx * 0.1 }}
+                    className="bg-card/50 backdrop-blur-sm p-8 rounded-3xl border border-white/10 hover:border-primary/30 transition-colors group"
+                  >
+                    <div className="flex items-center gap-6">
+                      <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                        {item.icon}
+                      </div>
+                      <div>
+                        <h4 className="font-black text-lg mb-1">{item.title}</h4>
+                        <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Emotional Bridge Section */}
+      <section className="py-16 px-6 bg-bg-dark">
+        <div className="max-w-3xl mx-auto text-center space-y-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="space-y-8"
+          >
+            <div className="space-y-4">
+              <p className="text-xl md:text-3xl text-slate-300 font-medium leading-tight">
+                Quantas vezes você prometeu pra si mesmo que ia parar?
+              </p>
+              <p className="text-xl md:text-3xl text-slate-300 font-medium leading-tight">
+                Quantos projetos ficaram pra depois por causa disso?
+              </p>
+              <p className="text-xl md:text-3xl text-slate-300 font-medium leading-tight">
+                Quantas noites você fechou o celular sentindo que desperdiçou mais um dia?
+              </p>
+            </div>
+            
+            <div className="flex justify-center py-4">
+              <div className="w-12 h-1 bg-primary/20 rounded-full" />
+            </div>
+
+            <div className="space-y-6">
+              <h3 className="text-3xl md:text-5xl font-display font-bold text-white">
+                Isso não é falta de disciplina. <br/>
+                <span className="text-primary italic">É neurociência.</span>
+              </h3>
+
+              <motion.p 
+                initial={{ scale: 0.95, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration:0.6 }}
+                className="text-4xl md:text-7xl font-black text-white/10 uppercase tracking-tighter"
+              >
+                Seu cérebro foi sequestrado.
+              </motion.p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -248,32 +294,57 @@ export default function App() {
     </section>
 
     {/* The Solution Introduction */}
-    <section id="solution" className="py-16 bg-primary text-bg-dark px-6">
+    <section id="solution" className="py-24 bg-bg-dark px-6 relative overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl aspect-square bg-primary/5 blur-[150px] -z-10" />
+        
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-5xl md:text-7xl mb-8 font-display font-bold tracking-tight">Protocolo <span className="text-black">Anti-Scroll</span></h2>
-          <p className="text-xl md:text-3xl font-bold mb-16 max-w-3xl mx-auto leading-tight text-black">
-            O método exato para parar de perder horas no celular e recuperar o controle da sua atenção — <span className="underline decoration-black/20">sem depender de disciplina ou força de vontade.</span>
+          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-5 py-2 rounded-full text-xs font-black uppercase tracking-widest mb-10">
+             <Sparkles className="w-4 h-4" /> Apresentando a Saída
+          </div>
+          
+          <h2 className="text-5xl md:text-8xl mb-8 font-display font-black tracking-tight leading-none text-white">
+            PROTOCOLO <br /> <span className="text-primary italic">ANTI-SCROLL.</span>
+          </h2>
+          
+          <p className="text-xl md:text-2xl font-medium mb-16 max-w-3xl mx-auto leading-relaxed text-slate-400">
+            A única metodologia testada por <span className="text-white font-bold">5.240 alunos</span> capaz de hackear o sistema de recompensa do seu cérebro e devolver sua liberdade em 7 dias.
           </p>
           
-          <div className="bg-bg-dark/5 backdrop-blur-sm rounded-[40px] p-10 md:p-16 border border-bg-dark/10 inline-block text-left shadow-2xl">
-            <p className="text-2xl md:text-3xl font-bold mb-10 flex items-center gap-3">
-              <Zap className="w-8 h-8 fill-bg-dark text-[#000000]" /> ⚡ Inclui:
-            </p>
-            <div className="space-y-8">
-              <div className="flex items-center gap-6 text-xl md:text-2xl font-bold group">
-                <div className="w-16 h-16 bg-bg-dark text-primary rounded-2xl flex items-center justify-center text-3xl shadow-lg transform group-hover:scale-110 transition-transform">📲</div>
-                <span>Acesso imediato</span>
+          <div className="grid md:grid-cols-2 gap-8 text-left">
+            <div className="bg-white/5 backdrop-blur-md rounded-[40px] p-10 border border-white/10 shadow-2xl space-y-8">
+              <h3 className="text-2xl font-black flex items-center gap-3 text-white">
+                <Brain className="w-6 h-6 text-primary" /> O que você recebe:
+              </h3>
+              <div className="space-y-6">
+                {[
+                  "Plano Executável de 7 Dias",
+                  "Mecanismos de Bloqueio Neural",
+                  "Técnicas de Foco Hiper-Concentrado"
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-center gap-4 text-lg font-bold text-slate-300">
+                    <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0" />
+                    <span>{item}</span>
+                  </div>
+                ))}
               </div>
-              <div className="flex items-center gap-6 text-xl md:text-2xl font-bold group">
-                <div className="w-16 h-16 bg-bg-dark text-primary rounded-2xl flex items-center justify-center text-3xl shadow-lg transform group-hover:scale-110 transition-transform">
-                  <Sparkles className="w-8 h-8 text-primary" />
-                </div>
-                <span>Dopamina Profunda e Foco Inabalável</span>
+            </div>
+
+            <div className="bg-primary/90 rounded-[40px] p-10 shadow-[0_30px_60px_rgba(0,229,255,0.2)] flex flex-col justify-between items-center text-center">
+              <div className="space-y-4">
+                <span className="text-[10px] font-black uppercase tracking-[0.4em] text-bg-dark/50">A Grande Mudança</span>
+                <p className="text-3xl md:text-4xl font-black text-bg-dark leading-tight">
+                  Recupere +4 horas do seu dia. <span className="text-white italic">Todas as semanas.</span>
+                </p>
               </div>
-              <div className="flex items-center gap-6 text-xl md:text-2xl font-bold group">
-                <div className="w-16 h-16 bg-bg-dark text-primary rounded-2xl flex items-center justify-center text-3xl shadow-lg transform group-hover:scale-110 transition-transform">🧠</div>
-                <span>Reprogramação do foco em poucos dias</span>
-              </div>
+              
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={scrollToCheckout}
+                className="w-full bg-bg-dark text-white py-6 rounded-2xl font-black text-xl shadow-xl mt-12 flex items-center justify-center gap-3"
+              >
+                COMEÇAR O PROTOCOLO <ArrowRight className="w-6 h-6" />
+              </motion.button>
             </div>
           </div>
         </div>
@@ -413,149 +484,169 @@ export default function App() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 bg-bg-dark px-6">
+      <section className="py-16 bg-bg-dark px-6 overflow-hidden">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-5xl text-center mb-10 underline decoration-primary/30 underline-offset-8">Resultados Reais</h2>
-          <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
-              {[
-                {
-                  name: "Lucas Pereira",
-                  location: "São Paulo, SP",
-                  role: "Programador",
-                  avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=256&h=256&auto=format&fit=crop",
-                  text: "O mais bizarro foi perceber que eu ficava rolando a tela no automático toda vez que ficava ansioso. Depois que comecei a aplicar isso, minha produtividade mudou demais.",
-                  rating: 5
-                },
-                {
-                  name: "Mariana Costa",
-                  location: "Belo Horizonte, MG",
-                  role: "Estudante",
-                  avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=256&h=256&auto=format&fit=crop",
-                  text: "Sempre me sentia culpada por perder tempo no TikTok. Hoje eu leio 40 páginas por dia sem esforço. É bizarro o quanto o cérebro muda.",
-                  rating: 5
-                },
-                {
-                  name: "Roberto Silva",
-                  location: "Curitiba, PR",
-                  role: "Empreendedor",
-                  avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=256&h=256&auto=format&fit=crop",
-                  text: "A clareza mental que ganhei vale 10x o valor do protocolo. Recomendo para todo mundo que vive estressado.",
-                  rating: 5
-                },
-                {
-                  name: "Ana Julia",
-                  location: "Rio de Janeiro, RJ",
-                  role: "Designer",
-                  avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=256&h=256&auto=format&fit=crop",
-                  text: "Meus níveis de ansiedade caíram drasticamente. Parar de scrolar foi a melhor decisão que tomei no ano.",
-                  rating: 5
-                },
-                {
-                  name: "Henrique",
-                  location: "Florianópolis, SC",
-                  role: "Freelancer",
-                  avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=256&h=256&auto=format&fit=crop",
-                  text: "Meu tempo no celular caiu quase pela metade em poucos dias. O melhor foi recuperar minha concentração pra trabalhar e estudar.",
-                  rating: 5
-                }
-              ].map((t, idx) => (
-                <motion.div 
-                  key={idx} 
-                  initial={{ opacity: 0, scale: 0.98 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  className="break-inside-avoid-column bg-card p-8 rounded-2xl border border-white/5 hover:border-primary/20 transition-all"
-                >
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(t.rating)].map((_, i) => <Star key={i} className="w-4 h-4 fill-primary text-primary" />)}
+          <h2 className="text-3xl md:text-5xl text-center mb-16 underline decoration-primary/30 underline-offset-8">Resultados Reais</h2>
+          
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-20">
+            {/* Phone Mockup Container */}
+            <div className="relative group">
+              {/* Phone Frame */}
+              <div className="relative mx-auto border-slate-800 bg-slate-900 border-[12px] rounded-[3rem] h-[640px] w-[320px] shadow-[0_0_100px_rgba(0,229,255,0.1)] transition-shadow duration-500 group-hover:shadow-[0_0_120px_rgba(0,229,255,0.2)]">
+                {/* Notch */}
+                <div className="w-[140px] h-[30px] bg-slate-800 top-0 left-1/2 -translate-x-1/2 rounded-b-[1.5rem] absolute z-20" />
+                
+                {/* Screen Content - Scrolling Images */}
+                <div className="rounded-[2.2rem] overflow-hidden w-full h-full bg-slate-950 relative">
+                  <div className="absolute inset-0 overflow-y-auto scrollbar-hide space-y-4 p-4 py-10">
+                    {[
+                      "https://i.ibb.co/VYPs4p3d/image.png", // Speculative direct link
+                      "https://i.ibb.co/GfXTjCb5/image.png",
+                      "https://i.ibb.co/4Ry4Mw3C/image.png"
+                    ].map((src, idx) => (
+                      <motion.div
+                        key={idx}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: idx * 0.2 }}
+                        className="rounded-2xl overflow-hidden border border-white/5 shadow-2xl"
+                      >
+                        <img 
+                          src={src} 
+                          alt={`Resultado ${idx + 1}`}
+                          className="w-full h-auto object-cover"
+                          onError={(e) => {
+                            // Fallback to viewer if direct link fails, though viewer might not show in img
+                            const target = e.target as HTMLImageElement;
+                            if (idx === 0) target.src = "https://ibb.co/VYPs4p3d";
+                            if (idx === 1) target.src = "https://ibb.co/GfXTjCb5";
+                            if (idx === 2) target.src = "https://ibb.co/4Ry4Mw3C";
+                          }}
+                        />
+                      </motion.div>
+                    ))}
                   </div>
-                  <p className="text-slate-300 italic mb-6 leading-relaxed">"{t.text}"</p>
-                  <div className="flex items-center gap-4">
-                    <img src={t.avatar} alt={t.name} className="w-12 h-12 rounded-full object-cover border-2 border-primary/20" referrerPolicy="no-referrer" />
-                    <div>
-                      <p className="font-bold">{t.name}</p>
-                      <p className="text-xs text-slate-500 uppercase tracking-widest">{t.role}</p>
-                      <p className="text-[10px] text-slate-500 font-normal uppercase tracking-wider opacity-60">
-                        {t.location}
-                      </p>
-                    </div>
-                  </div>
-              </motion.div>
-              ))}
+                </div>
+              </div>
+
+              {/* Decorative elements around phone */}
+              <div className="absolute -top-10 -right-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl -z-10 animate-pulse" />
+              <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl -z-10 animate-pulse" />
+            </div>
+
+            {/* Testimonial Text / Caption */}
+            <div className="max-w-md space-y-8 text-center lg:text-left">
+              <div className="space-y-4">
+                <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-bold uppercase tracking-widest">
+                  <Users className="w-4 h-4" /> Prova Social
+                </div>
+                <h3 className="text-3xl md:text-4xl font-bold leading-tight">
+                  Pessoas comuns, <br />
+                  <span className="text-primary italic">resultados reais.</span>
+                </h3>
+                <p className="text-slate-400 text-lg leading-relaxed">
+                  Essas são conversas de alunos que aplicaram o <span className="text-white font-bold">Protocolo Anti-Scroll</span> e recuperaram o controle da própria vida em tempo recorde.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-card p-6 rounded-2xl border border-white/5">
+                  <div className="text-primary font-bold text-2xl mb-1">98%</div>
+                  <div className="text-xs text-slate-500 uppercase font-bold tracking-tight">Taxa de Satisfação</div>
+                </div>
+                <div className="bg-card p-6 rounded-2xl border border-white/5">
+                  <div className="text-primary font-bold text-2xl mb-1">+5k</div>
+                  <div className="text-xs text-slate-500 uppercase font-bold tracking-tight">Alunos Ativos</div>
+                </div>
+              </div>
+
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => document.getElementById('checkout')?.scrollIntoView({ behavior: 'smooth' })}
+                className="w-full bg-primary text-bg-dark py-5 rounded-2xl font-bold text-xl transition-all shadow-lg flex items-center justify-center gap-3"
+              >
+                QUERO ESSES RESULTADOS <ArrowRight className="w-6 h-6" />
+              </motion.button>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Pricing Section */}
-      <div id="checkout" className="pt-10 text-center">
-        <motion.p 
-          initial={{ opacity: 0, y: 5 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-amber-500/80 font-bold text-sm flex items-center justify-center gap-2"
+      <div id="checkout" className="pt-20 text-center">
+        <motion.div
+           initial={{ opacity: 0, scale: 0.9 }}
+           whileInView={{ opacity: 1, scale: 1 }}
+           viewport={{ once: true }}
+           className="inline-flex items-center gap-2 bg-amber-500/10 text-amber-500 px-6 py-2 rounded-full font-black text-xs uppercase tracking-widest mb-6 border border-amber-500/20"
         >
-          ⚠️ R$19,99 por tempo limitado
-        </motion.p>
+          <Clock className="w-4 h-4" /> Oferta expira em poucos minutos
+        </motion.div>
       </div>
-      <section className="pb-16 pt-6 px-6 text-center">
-        <div className="max-w-md mx-auto">
+      <section className="pb-24 pt-6 px-6">
+        <div className="max-w-xl mx-auto">
           <motion.div
-            initial={{ scale: 0.98, opacity: 0 }}
+            initial={{ scale: 0.95, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="bg-card rounded-[40px] border-4 border-primary p-12 text-center relative shadow-2xl"
+            className="bg-card rounded-[48px] border-[5px] border-primary p-10 md:p-16 text-center relative shadow-[0_0_100px_rgba(0,229,255,0.15)] overflow-hidden"
           >
-            <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-primary text-bg-dark font-bold py-2 px-8 rounded-full text-sm uppercase tracking-widest whitespace-nowrap">
-              Investimento Exclusivo
-            </div>
+            {/* Visual Anchor */}
+            <div className="absolute top-0 left-0 w-full h-2 bg-primary group-hover:h-3 transition-all" />
             
-            <div className="mb-6 space-y-2 text-center">
-              <p className="text-slate-500 font-bold uppercase tracking-widest text-[10px]">Tudo o que você vai receber:</p>
-              <ul className="text-[10px] text-slate-400 space-y-1 mb-4 flex flex-col items-center">
-                <li className="flex justify-between w-full max-w-[200px]"><span>Protocolo Anti-Scroll</span> <span>R$ 127,00</span></li>
-                <li className="flex justify-between w-full max-w-[200px]"><span>Bônus 1: Protocolo Sono Alpha</span> <span>R$ 67,00</span></li>
-                <li className="flex justify-between w-full max-w-[200px]"><span>Bônus 2: Sistema Blindado</span> <span>R$ 47,00</span></li>
-                <li className="flex justify-between w-full max-w-[200px]"><span>Bônus 3: SOS Anti-Recaída</span> <span>R$ 57,00</span></li>
-                <li className="flex justify-between w-full max-w-[200px] font-bold border-t border-white/10 pt-1 text-white/60"><span>SOMA TOTAL:</span> <span>R$ 298,00</span></li>
-              </ul>
-              <div className="bg-red-500/10 text-red-500 text-[10px] font-bold py-1 px-3 rounded-md inline-block">
-                VOCÊ ECONOMIZA: R$ 278,01
+            <div className="relative z-10">
+              <h3 className="text-3xl md:text-5xl font-display font-black mb-8 leading-tight">
+                RECUPERE SUA <br /> <span className="text-primary italic">VIDA HOJE.</span>
+              </h3>
+
+              <div className="space-y-4 mb-12">
+                {[
+                  { label: "Protocolo Anti-Scroll", price: "R$ 127" },
+                  { label: "Protocolo Sono Alpha", price: "R$ 67" },
+                  { label: "Sistema Blindado", price: "R$ 47" },
+                  { label: "SOS Anti-Recaída", price: "R$ 57" },
+                ].map((item, idx) => (
+                  <div key={idx} className="flex justify-between items-center text-sm md:text-base border-b border-white/5 pb-2">
+                    <span className="text-slate-400 font-medium">{item.label}</span>
+                    <span className="text-slate-500 line-through font-mono">{item.price}</span>
+                  </div>
+                ))}
+                <div className="flex justify-between items-center pt-4 text-white">
+                  <span className="font-black uppercase tracking-widest text-xs">Valor Total Estimado:</span>
+                  <span className="font-mono line-through opacity-50 text-xl">R$ 298,00</span>
+                </div>
+              </div>
+
+              <div className="mb-10 text-center">
+                <p className="text-slate-400 font-bold uppercase tracking-[0.3em] text-[10px] mb-4">Investimento Único</p>
+                <div className="flex items-center justify-center gap-3">
+                  <span className="text-2xl font-bold text-slate-500 line-through">R$ 97</span>
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-3xl font-black text-primary">R$</span>
+                    <span className="text-8xl md:text-9xl font-display font-black text-primary leading-none tracking-tighter">19</span>
+                    <span className="text-4xl font-black text-primary">,99</span>
+                  </div>
+                </div>
+                <p className="text-primary/60 text-[10px] font-black uppercase tracking-widest mt-2">Pagamento Único via PIX</p>
+              </div>
+
+              <a 
+                href={CTA_BUY_URL}
+                className="block w-full bg-primary hover:bg-primary-dark text-bg-dark py-8 rounded-[32px] font-black text-2xl transition-all shadow-[0_15px_40px_rgba(0,229,255,0.3)] hover:scale-[1.03] active:scale-[0.97] mb-8"
+              >
+                QUERO ACESSO IMEDIATO
+              </a>
+
+              <div className="flex items-center justify-center gap-8 opacity-50 contrast-125 grayscale scale-90">
+                <img src="https://logodownload.org/wp-content/uploads/2020/02/pix-logo.png" className="h-6 object-contain" alt="Pix" />
+                <div className="text-[10px] font-black flex items-center justify-center whitespace-nowrap">100% SEGURO</div>
               </div>
             </div>
 
-            <p className="text-slate-200 font-bold uppercase tracking-widest text-xs mb-2">Acesso Completo Hoje Por:</p>
-            <div className="flex items-center justify-center gap-2 mb-8">
-              <span className="text-2xl font-bold text-primary">R$</span>
-              <span className="text-7xl font-display font-bold text-primary">19</span>
-              <div className="text-left">
-                <span className="block text-2xl font-bold text-primary">,99</span>
-                <span className="text-xs text-slate-500 uppercase tracking-tighter">Pagamento Único</span>
-              </div>
-            </div>
-
-            <a 
-              href={CTA_BUY_URL}
-              className="w-full bg-primary hover:bg-primary-dark text-bg-dark py-5 rounded-2xl font-bold text-xl transition-all shadow-lg hover:scale-[1.02] flex items-center justify-center gap-3 active:scale-[0.98]"
-            >
-              SIM, QUERO COMEÇAR AGORA <ChevronRight className="w-6 h-6" />
-            </a>
-
-            <div className="mt-4 space-y-1 text-slate-500 text-[11px] flex flex-col items-center opacity-80">
-              <div className="flex items-center gap-1.5">
-                <Zap className="w-3 h-3 text-primary" /> Acesso imediato
-              </div>
-              <div className="flex items-center gap-1.5">
-                <Clock className="w-3 h-3 text-primary" /> Aplicação em poucos minutos
-              </div>
-              <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-3 h-3 text-primary" /> Funciona já nos primeiros dias
-              </div>
-              <div className="flex items-center gap-1.5">
-                <Lock className="w-3 h-3 text-primary" /> Pagamento 100% Seguro & Criptografado
-              </div>
-            </div>
+            {/* Decorative background glow */}
+            <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-primary/10 rounded-full blur-[80px] -z-10" />
           </motion.div>
         </div>
       </section>
@@ -599,9 +690,9 @@ export default function App() {
           </div>
 
           <div>
-            <h2 className="text-3xl mb-4">Garantia Blindada de <span className="text-primary">7 Dias</span></h2>
-            <p className="text-slate-400 leading-relaxed italic text-lg">
-              "Eu confio tanto no meu método que te dou 7 dias de teste completo. Se você não sentir seu cérebro mais leve, focado e produtivo, basta me enviar um único e-mail. Eu devolvo cada centavo do seu investimento imediatamente. O risco é 100% meu."
+            <h2 className="text-3xl mb-4 font-display font-black">Garantia Blindada de <span className="text-primary">7 Dias</span></h2>
+            <p className="text-slate-400 leading-relaxed italic text-lg md:text-xl">
+              "Eu confio tanto no meu método que te dou 7 dias de teste completo. Se não sentir diferença, um e-mail — e eu devolvo tudo. <span className="text-white font-bold tracking-tight">O risco é 100% meu.</span>"
             </p>
           </div>
         </div>
@@ -712,14 +803,12 @@ export default function App() {
             <div className="space-y-3">
               <div className="flex items-center gap-2 text-primary/80">
                 <ShieldCheck className="w-4 h-4" />
-                <h4 className="font-bold text-sm tracking-tight text-slate-200">🛡️ Garantia Incondicional de 7 Dias</h4>
+                <h4 className="font-bold text-sm tracking-tight text-slate-200">🛡️ Garantia Blindada de 7 Dias</h4>
               </div>
               <p className="text-slate-500 text-xs leading-relaxed max-w-sm">
-                Se por qualquer motivo você não sentir diferença no seu foco e controle…
+                Se por qualquer motivo você não sentir diferença…
                 <br /><br />
-                <span className="text-slate-300">Basta enviar um e-mail e você recebe 100% do seu dinheiro de volta.</span>
-                <br />
-                Sem perguntas. Sem burocracia.
+                <span className="text-slate-300">Basta enviar um e-mail e você recebe 100% do seu dinheiro de volta. O risco é totalmente nosso.</span>
               </p>
             </div>
           </div>
