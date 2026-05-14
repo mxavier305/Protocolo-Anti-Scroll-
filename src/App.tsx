@@ -60,23 +60,50 @@ export default function App() {
           >
             {/* Hero Image / Visualization - MOVED TO TOP */}
             <div className="relative w-full max-w-4xl mx-auto mb-12 group px-4">
-              <div className="absolute inset-0 bg-orange-500/20 blur-[120px] rounded-full -z-10 group-hover:bg-orange-500/40 transition-all duration-1000 opacity-50" />
-              <div className="relative z-10 overflow-hidden rounded-2xl md:rounded-[40px] border-2 border-orange-500 shadow-[0_0_30px_rgba(249,115,22,0.6),inset_0_0_20px_rgba(249,115,22,0.2)] bg-bg-dark/50 backdrop-blur-sm transition-all duration-500 group-hover:shadow-[0_0_50px_rgba(249,115,22,0.8),inset_0_0_30px_rgba(249,115,22,0.3)]">
+              <div className="absolute inset-0 bg-orange-500/30 blur-[130px] rounded-full -z-10 group-hover:bg-orange-500/50 transition-all duration-1000 opacity-60" />
+              <div className="relative z-10 overflow-hidden rounded-2xl md:rounded-[40px] border-2 border-orange-500/50 shadow-[0_0_80px_rgba(249,115,22,0.4),inset_0_0_40px_rgba(249,115,22,0.15)] bg-bg-dark/80 backdrop-blur-2xl transition-all duration-1000 group-hover:shadow-[0_0_120px_rgba(249,115,22,0.6),inset_0_0_60px_rgba(249,115,22,0.25)] group-hover:border-orange-400">
+                {/* Visual Texture / Grain for Detail */}
+                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/micro-carbon.png')] opacity-10 mix-blend-overlay pointer-events-none z-20" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-orange-500/10 via-transparent to-white/5 pointer-events-none z-20" />
+                
                 <img 
-                  src="https://raw.githubusercontent.com/StackBlitz-Custom-Images/high-res-mockup/main/protocolo-anti-scroll.png" 
+                  src="https://i.ibb.co/p6zDdHMN/image.png" 
                   alt="Protocolo Premium"
-                  className="w-full h-auto transition-transform duration-700 group-hover:scale-[1.02]"
-                  style={{ imageRendering: 'auto' }}
+                  className="w-full h-auto transition-all duration-1000 group-hover:scale-[1.02] brightness-110 contrast-110 saturate-110"
+                  style={{ 
+                    imageRendering: 'high-quality',
+                    transform: 'translate3d(0,0,0)',
+                    backfaceVisibility: 'hidden',
+                  }}
                   referrerPolicy="no-referrer"
                   loading="eager"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    if (!target.src.includes('ibb.co')) {
-                      target.src = 'https://i.ibb.co/m5cc14vT/image.png';
-                    }
-                  }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/40 via-transparent to-transparent pointer-events-none" />
+                
+                {/* Advanced Light Leak / Lens Flare */}
+                <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-br from-white/10 to-transparent blur-[80px] rotate-45 pointer-events-none z-20" />
+                <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/90 via-transparent to-bg-dark/10 pointer-events-none z-10" />
+                
+                {/* Tech Overlays for 'High Def' feel */}
+                <div className="absolute top-8 right-10 flex flex-col items-end gap-1.5 z-30 hidden md:flex select-none">
+                  <div className="px-2 py-0.5 border border-orange-500/50 rounded-sm bg-orange-500/10 backdrop-blur-md">
+                    <div className="text-[9px] font-mono text-orange-500 font-black uppercase tracking-[0.5em] leading-none">
+                      8K MASTER RECORD
+                    </div>
+                  </div>
+                  <div className="text-[8px] font-mono text-white/40 uppercase tracking-[0.2em]">
+                    SENSITIVITY: HIGH-RANGE
+                  </div>
+                </div>
+                
+                <div className="absolute bottom-8 left-10 flex flex-col items-start gap-2 z-30 hidden md:flex select-none">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-orange-500 animate-pulse shadow-[0_0_10px_#f97316]" />
+                    <span className="text-[9px] font-mono text-orange-400/80 uppercase tracking-widest font-bold">Dynamic HDR Active</span>
+                  </div>
+                  <div className="text-[10px] font-mono text-white/40 uppercase tracking-[0.2em]">
+                    Cinematic Rendering / Logic: 0x4F92
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -103,6 +130,9 @@ export default function App() {
               >
                 QUERO MEU FOCO DE VOLTA <ArrowRight className="w-6 h-6" />
               </motion.button>
+              <p className="text-[9px] text-slate-600 mt-3 font-medium opacity-80">
+                Acesso imediato após a confirmação
+              </p>
               
               <div className="mt-6 flex flex-col items-center gap-4">
                 <p className="text-[10px] text-slate-500 uppercase font-black tracking-widest flex items-center justify-center gap-2">
@@ -865,6 +895,35 @@ export default function App() {
           </div>
         </div>
       </footer>
+
+      {/* Added Final Visual Anchor at the very end */}
+      <section className="pb-24 px-6 overflow-hidden">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="relative group"
+          >
+            <div className="absolute inset-0 bg-primary/20 blur-[120px] rounded-full -z-10 opacity-30" />
+            <div className="relative z-10 overflow-hidden rounded-[3rem] border border-white/5 shadow-2xl bg-bg-dark/40 backdrop-blur-sm">
+              <img 
+                src="https://i.ibb.co/p6zDdHMN/image.png" 
+                alt="Protocolo Master Visual"
+                className="w-full h-auto brightness-110 contrast-110 saturate-110 group-hover:scale-105 transition-transform duration-1000"
+                loading="lazy"
+                style={{ imageRendering: 'high-quality' }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-bg-dark via-transparent to-transparent opacity-80" />
+              <div className="absolute bottom-12 left-0 right-0 text-center">
+                 <p className="text-[10px] text-primary font-black uppercase tracking-[0.5em] opacity-40 mb-2">Final Protocol Visualization</p>
+                 <div className="h-px w-24 bg-primary/20 mx-auto" />
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
       
       {/* Live Social Proof Notification */}
       <LiveFeedback />
