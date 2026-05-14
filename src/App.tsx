@@ -64,19 +64,24 @@ export default function App() {
               <Zap className="w-4 h-4 fill-primary" /> Alerta: Sua atenção está sendo monetizada
             </span>
 
-            {/* Added Section 1 Image with Neon Glow */}
-            <div className="relative w-full max-w-4xl mx-auto mb-12 group px-4">
-              <div className="absolute inset-0 bg-orange-600/30 blur-[120px] rounded-full -z-10 opacity-60 group-hover:opacity-80 transition-opacity duration-700" />
-              <div className="relative z-10 overflow-hidden rounded-2xl md:rounded-[40px] border-2 border-orange-500/40 shadow-[0_0_50px_rgba(249,115,22,0.4),inset_0_0_30px_rgba(249,115,22,0.1)] bg-bg-dark/40 backdrop-blur-xl group-hover:border-orange-400 group-hover:shadow-[0_0_80px_rgba(249,115,22,0.6),inset_0_0_40px_rgba(249,115,22,0.2)] transition-all duration-700">
+            {/* Product Mockup with Vibrant Neon Orange Glow */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="relative w-full max-w-4xl mx-auto mb-16 group px-4"
+            >
+              <div className="absolute inset-0 bg-orange-600/60 blur-[130px] rounded-full -z-10 animate-pulse" />
+              <div className="relative z-10 overflow-hidden rounded-[2rem] md:rounded-[3rem] border border-white/5 shadow-[0_0_80px_rgba(255,94,0,0.5)] bg-bg-dark/40 backdrop-blur-3xl transition-all duration-700 group-hover:shadow-[0_0_130px_rgba(255,94,0,0.8)]">
                 <img 
-                  src="https://i.ibb.co/B11HLgw/image.png" 
-                  alt="Protocolo Visual"
-                  className="w-full h-auto brightness-[1.1] contrast-[1.1] group-hover:scale-[1.02] transition-transform duration-1000"
+                  src="https://i.ibb.co/p6zDdHMN/image.png" 
+                  alt="Protocolo Anti-Scroll Mockup"
+                  className="w-full h-auto brightness-[1.15] contrast-[1.1] saturate-[1.1] group-hover:scale-[1.02] transition-transform duration-1000"
                   loading="eager"
                   referrerPolicy="no-referrer"
                 />
               </div>
-            </div>
+            </motion.div>
             
             <h1 className="text-4xl md:text-8xl font-display font-black leading-[1] mb-8 tracking-tighter">
               A DISTRAÇÃO <br />
