@@ -81,29 +81,6 @@ export default function App() {
                 
                 {/* Advanced Light Leak / Lens Flare */}
                 <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-br from-white/10 to-transparent blur-[80px] rotate-45 pointer-events-none z-20" />
-                <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/90 via-transparent to-bg-dark/10 pointer-events-none z-10" />
-                
-                {/* Tech Overlays for 'High Def' feel */}
-                <div className="absolute top-8 right-10 flex flex-col items-end gap-1.5 z-30 hidden md:flex select-none">
-                  <div className="px-2 py-0.5 border border-orange-500/50 rounded-sm bg-orange-500/10 backdrop-blur-md">
-                    <div className="text-[9px] font-mono text-orange-500 font-black uppercase tracking-[0.5em] leading-none">
-                      8K MASTER RECORD
-                    </div>
-                  </div>
-                  <div className="text-[8px] font-mono text-white/40 uppercase tracking-[0.2em]">
-                    SENSITIVITY: HIGH-RANGE
-                  </div>
-                </div>
-                
-                <div className="absolute bottom-8 left-10 flex flex-col items-start gap-2 z-30 hidden md:flex select-none">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-orange-500 animate-pulse shadow-[0_0_10px_#f97316]" />
-                    <span className="text-[9px] font-mono text-orange-400/80 uppercase tracking-widest font-bold">Dynamic HDR Active</span>
-                  </div>
-                  <div className="text-[10px] font-mono text-white/40 uppercase tracking-[0.2em]">
-                    Cinematic Rendering / Logic: 0x4F92
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -920,10 +897,6 @@ export default function App() {
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-bg-dark via-transparent to-transparent opacity-80" />
-              <div className="absolute bottom-12 left-0 right-0 text-center">
-                 <p className="text-[10px] text-primary font-black uppercase tracking-[0.5em] opacity-40 mb-2">Final Protocol Visualization</p>
-                 <div className="h-px w-24 bg-primary/20 mx-auto" />
-              </div>
             </div>
           </motion.div>
         </div>
