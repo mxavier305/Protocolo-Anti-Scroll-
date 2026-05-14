@@ -66,18 +66,26 @@ export default function App() {
                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/micro-carbon.png')] opacity-10 mix-blend-overlay pointer-events-none z-20" />
                 <div className="absolute inset-0 bg-gradient-to-tr from-orange-500/10 via-transparent to-white/5 pointer-events-none z-20" />
                 
-                <img 
-                  src="https://i.ibb.co/p6zDdHMN/image.png" 
-                  alt="Protocolo Premium"
-                  className="w-full h-auto transition-all duration-1000 group-hover:scale-[1.05] brightness-[1.08] contrast-[1.2] saturate-[1.15] filter drop-shadow-[0_0_30px_rgba(255,94,0,0.4)]"
-                  style={{ 
-                    imageRendering: '-webkit-optimize-contrast',
-                    transform: 'translate3d(0,0,0)',
-                    backfaceVisibility: 'hidden',
-                  }}
-                  referrerPolicy="no-referrer"
-                  loading="eager"
-                />
+                <picture>
+                  {/* Imagem otimizada apenas para celulares (até 600px de largura) */}
+                  <source srcSet="https://i.ibb.co/p6zDdHMN/image.png" media="(max-width: 600px)" />
+                  
+                  {/* Imagem padrão para Computadores */}
+                  <img 
+                    src="https://i.ibb.co/p6zDdHMN/image.png" 
+                    alt="Protocolo Anti-Scroll"
+                    className="w-full h-auto transition-all duration-1000 group-hover:scale-[1.05] brightness-[1.08] contrast-[1.2] saturate-[1.15] filter drop-shadow-[0_0_30px_rgba(255,94,0,0.4)]"
+                    width="1000"
+                    height="1000"
+                    style={{ 
+                      imageRendering: '-webkit-optimize-contrast',
+                      transform: 'translate3d(0,0,0)',
+                      backfaceVisibility: 'hidden',
+                    }}
+                    referrerPolicy="no-referrer"
+                    loading="eager"
+                  />
+                </picture>
                 
                 {/* Advanced Light Leak / Lens Flare */}
                 <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-br from-white/10 to-transparent blur-[80px] rotate-45 pointer-events-none z-20" />
@@ -896,39 +904,6 @@ export default function App() {
         </div>
       </footer>
 
-      {/* Added Final Visual Anchor at the very end */}
-      <section className="pb-24 px-6 overflow-hidden">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="relative group"
-          >
-            <div className="absolute inset-0 bg-primary/20 blur-[120px] rounded-full -z-10 opacity-30" />
-            <div className="relative z-10 overflow-hidden rounded-[3rem] border border-white/10 shadow-[0_0_80px_rgba(255,94,0,0.2)] bg-bg-dark/40 backdrop-blur-xl">
-              <img 
-                src="https://i.ibb.co/p6zDdHMN/image.png" 
-                alt="Protocolo Master Visual"
-                className="w-full h-auto brightness-[1.08] contrast-[1.2] saturate-[1.15] group-hover:scale-[1.03] transition-transform duration-1000"
-                loading="lazy"
-                style={{ 
-                  imageRendering: '-webkit-optimize-contrast',
-                  transform: 'translate3d(0,0,0)',
-                  backfaceVisibility: 'hidden'
-                }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-bg-dark via-transparent to-transparent opacity-80" />
-              <div className="absolute bottom-12 left-0 right-0 text-center">
-                 <p className="text-[10px] text-primary font-black uppercase tracking-[0.5em] opacity-40 mb-2">Final Protocol Visualization</p>
-                 <div className="h-px w-24 bg-primary/20 mx-auto" />
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-      
       {/* Live Social Proof Notification */}
       <LiveFeedback />
     </div>
