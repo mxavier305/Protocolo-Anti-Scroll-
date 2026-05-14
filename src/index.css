@@ -7,6 +7,8 @@
   
   --color-primary: #00E5FF;
   --color-primary-dark: #00B8CC;
+  --color-cta: #FF5E00;
+  --color-cta-dark: #CC4B00;
   --color-bg-dark: #0A0F1A;
   --color-card: #161E2E;
 }
@@ -23,6 +25,10 @@
 
 .glow-blue {
   box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+}
+
+.glow-orange {
+  box-shadow: 0 0 20px rgba(255, 94, 0, 0.3);
 }
 
 .bg-mesh {

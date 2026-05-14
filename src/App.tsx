@@ -58,6 +58,28 @@ export default function App() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-center w-full"
           >
+            {/* Hero Image / Visualization - MOVED TO TOP */}
+            <div className="relative w-full max-w-4xl mx-auto mb-12 group px-4">
+              <div className="absolute inset-0 bg-orange-500/20 blur-[120px] rounded-full -z-10 group-hover:bg-orange-500/40 transition-all duration-1000 opacity-50" />
+              <div className="relative z-10 overflow-hidden rounded-2xl md:rounded-[40px] border-2 border-orange-500 shadow-[0_0_30px_rgba(249,115,22,0.6),inset_0_0_20px_rgba(249,115,22,0.2)] bg-bg-dark/50 backdrop-blur-sm transition-all duration-500 group-hover:shadow-[0_0_50px_rgba(249,115,22,0.8),inset_0_0_30px_rgba(249,115,22,0.3)]">
+                <img 
+                  src="https://raw.githubusercontent.com/StackBlitz-Custom-Images/high-res-mockup/main/protocolo-anti-scroll.png" 
+                  alt="Protocolo Premium"
+                  className="w-full h-auto transition-transform duration-700 group-hover:scale-[1.02]"
+                  style={{ imageRendering: 'auto' }}
+                  referrerPolicy="no-referrer"
+                  loading="eager"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    if (!target.src.includes('ibb.co')) {
+                      target.src = 'https://i.ibb.co/m5cc14vT/image.png';
+                    }
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/40 via-transparent to-transparent pointer-events-none" />
+              </div>
+            </div>
+
             <span className="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-primary/10 text-primary border border-primary/20 text-[10px] md:text-xs font-black uppercase tracking-[0.2em] mb-8 animate-pulse">
               <Zap className="w-4 h-4 fill-primary" /> Alerta: Sua atenção está sendo monetizada
             </span>
@@ -77,7 +99,7 @@ export default function App() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={scrollToCheckout}
-                className="w-[90%] md:w-full bg-primary text-bg-dark py-6 md:py-8 rounded-3xl font-black text-xl md:text-2xl transition-all shadow-[0_20px_50px_rgba(0,229,255,0.3)] flex items-center justify-center gap-4 mx-auto"
+                className="w-[90%] md:w-full bg-cta text-bg-dark py-6 md:py-8 rounded-3xl font-black text-xl md:text-2xl transition-all shadow-[0_20px_50px_rgba(255,94,0,0.3)] flex items-center justify-center gap-4 mx-auto"
               >
                 QUERO MEU FOCO DE VOLTA <ArrowRight className="w-6 h-6" />
               </motion.button>
@@ -276,7 +298,7 @@ export default function App() {
             whileHover={{ scale: 1.02, y: -2 }}
             whileTap={{ scale: 0.98 }}
             onClick={() => document.getElementById('solution')?.scrollIntoView({ behavior: 'smooth' })}
-            className="group relative bg-primary text-bg-dark px-10 py-6 rounded-full font-black text-lg md:text-xl uppercase tracking-tighter shadow-[0_0_50px_rgba(34,211,238,0.3)] hover:shadow-[0_0_70px_rgba(34,211,238,0.5)] transition-all"
+            className="group relative bg-cta text-bg-dark px-10 py-6 rounded-full font-black text-lg md:text-xl uppercase tracking-tighter shadow-[0_0_50px_rgba(255,94,0,0.3)] hover:shadow-[0_0_70px_rgba(255,94,0,0.5)] transition-all"
           >
             QUERO ENTENDER COMO SAIR DISSO
             <ArrowRight className="w-6 h-6 inline-block ml-2 group-hover:translate-x-1 transition-transform" />
@@ -333,7 +355,7 @@ export default function App() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={scrollToCheckout}
-                className="w-full bg-bg-dark text-white py-6 rounded-2xl font-black text-xl shadow-xl mt-12 flex items-center justify-center gap-3"
+                className="w-full bg-cta text-bg-dark py-6 rounded-2xl font-black text-xl shadow-xl mt-12 flex items-center justify-center gap-3"
               >
                 COMEÇAR O PROTOCOLO <ArrowRight className="w-6 h-6" />
               </motion.button>
@@ -576,7 +598,7 @@ export default function App() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => document.getElementById('checkout')?.scrollIntoView({ behavior: 'smooth' })}
-                className="w-full bg-primary text-bg-dark py-5 rounded-2xl font-bold text-xl transition-all shadow-lg flex items-center justify-center gap-3"
+                className="w-full bg-cta text-bg-dark py-5 rounded-2xl font-bold text-xl transition-all shadow-lg flex items-center justify-center gap-3"
               >
                 QUERO ESSES RESULTADOS <ArrowRight className="w-6 h-6" />
               </motion.button>
@@ -646,7 +668,7 @@ export default function App() {
 
               <a 
                 href={CTA_BUY_URL}
-                className="block w-full bg-primary hover:bg-primary-dark text-bg-dark py-8 rounded-[32px] font-black text-2xl transition-all shadow-[0_15px_40px_rgba(0,229,255,0.3)] hover:scale-[1.03] active:scale-[0.97] mb-8"
+                className="block w-full bg-cta hover:bg-cta-dark text-bg-dark py-8 rounded-[32px] font-black text-2xl transition-all shadow-[0_15px_40px_rgba(255,94,0,0.3)] hover:scale-[1.03] active:scale-[0.97] mb-8"
               >
                 QUERO ACESSO IMEDIATO
               </a>
@@ -729,7 +751,7 @@ export default function App() {
         <a 
           href="#checkout"
           onClick={scrollToCheckout}
-          className="inline-flex bg-primary hover:bg-primary-dark text-bg-dark px-8 md:px-16 py-6 md:py-8 rounded-3xl font-bold text-xl md:text-3xl transition-all glow-blue items-center gap-4 hover:scale-102 active:scale-98 shadow-[0_0_60px_rgba(0,229,255,0.2)]"
+          className="inline-flex bg-cta hover:bg-cta-dark text-bg-dark px-8 md:px-16 py-6 md:py-8 rounded-3xl font-bold text-xl md:text-3xl transition-all glow-orange items-center gap-4 hover:scale-102 active:scale-98 shadow-[0_0_60px_rgba(255,94,0,0.2)]"
         >
           Quero recuperar meu foco hoje <ArrowRight className="w-8 h-8" />
         </a>
