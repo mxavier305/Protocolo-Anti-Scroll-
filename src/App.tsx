@@ -67,7 +67,7 @@ export default function App() {
                 <div className="absolute inset-0 bg-gradient-to-tr from-orange-500/10 via-transparent to-white/5 pointer-events-none z-20" />
                 
                 <img 
-                  src="/hero.png" 
+                  src="https://i.ibb.co/p6zDdHMN/image.png" 
                   alt="Protocolo Premium"
                   className="w-full h-auto transition-all duration-1000 group-hover:scale-[1.05] brightness-[1.08] contrast-[1.2] saturate-[1.15] filter drop-shadow-[0_0_30px_rgba(255,94,0,0.4)]"
                   style={{ 
@@ -872,6 +872,8 @@ export default function App() {
           </div>
         </div>
       </footer>
+
+
       
       {/* Live Social Proof Notification */}
       <LiveFeedback />
