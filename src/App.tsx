@@ -66,26 +66,19 @@ export default function App() {
                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/micro-carbon.png')] opacity-10 mix-blend-overlay pointer-events-none z-20" />
                 <div className="absolute inset-0 bg-gradient-to-tr from-orange-500/10 via-transparent to-white/5 pointer-events-none z-20" />
                 
-                <picture>
-                  {/* Imagem otimizada apenas para celulares (até 600px de largura) */}
-                  <source srcSet="https://i.ibb.co/p6zDdHMN/image.png" media="(max-width: 600px)" />
-                  
-                  {/* Imagem padrão para Computadores */}
-                  <img 
-                    src="https://i.ibb.co/p6zDdHMN/image.png" 
-                    alt="Protocolo Anti-Scroll"
-                    className="w-full h-auto transition-all duration-1000 group-hover:scale-[1.05] brightness-[1.08] contrast-[1.2] saturate-[1.15] filter drop-shadow-[0_0_30px_rgba(255,94,0,0.4)]"
-                    width="1000"
-                    height="1000"
-                    style={{ 
-                      imageRendering: '-webkit-optimize-contrast',
-                      transform: 'translate3d(0,0,0)',
-                      backfaceVisibility: 'hidden',
-                    }}
-                    referrerPolicy="no-referrer"
-                    loading="eager"
-                  />
-                </picture>
+                <img 
+                  src="https://i.ibb.co/p6zDdHMN/image.png" 
+                  alt="Protocolo Premium"
+                  className="w-full h-auto transition-all duration-1000 group-hover:scale-[1.04] brightness-[1.05] contrast-[1.2] saturate-[1.15] filter drop-shadow-[0_0_30px_rgba(255,94,0,0.5)]"
+                  style={{ 
+                    imageRendering: 'high-quality',
+                    transform: 'translate3d(0,0,0)',
+                    backfaceVisibility: 'hidden',
+                    perspective: '1000px'
+                  }}
+                  referrerPolicy="no-referrer"
+                  loading="eager"
+                />
                 
                 {/* Advanced Light Leak / Lens Flare */}
                 <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-br from-white/10 to-transparent blur-[80px] rotate-45 pointer-events-none z-20" />
@@ -903,7 +896,7 @@ export default function App() {
           </div>
         </div>
       </footer>
-
+      
       {/* Live Social Proof Notification */}
       <LiveFeedback />
     </div>
