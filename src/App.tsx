@@ -58,58 +58,25 @@ export default function App() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-center w-full"
           >
-            {/* Hero Image / Visualization - MOVED TO TOP */}
-            <div className="relative w-full max-w-4xl mx-auto mb-12 group px-4">
-              <div className="absolute inset-0 bg-orange-500/30 blur-[130px] rounded-full -z-10 group-hover:bg-orange-500/50 transition-all duration-1000 opacity-60" />
-              <div className="relative z-10 overflow-hidden rounded-2xl md:rounded-[40px] border-2 border-orange-500/50 shadow-[0_0_80px_rgba(249,115,22,0.4),inset_0_0_40px_rgba(249,115,22,0.15)] bg-bg-dark/80 backdrop-blur-2xl transition-all duration-1000 group-hover:shadow-[0_0_120px_rgba(249,115,22,0.6),inset_0_0_60px_rgba(249,115,22,0.25)] group-hover:border-orange-400">
-                {/* Visual Texture / Grain for Detail */}
-                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/micro-carbon.png')] opacity-10 mix-blend-overlay pointer-events-none z-20" />
-                <div className="absolute inset-0 bg-gradient-to-tr from-orange-500/10 via-transparent to-white/5 pointer-events-none z-20" />
-                
-                <img 
-                  src="https://i.ibb.co/p6zDdHMN/image.png" 
-                  alt="Protocolo Premium"
-                  className="w-full h-auto transition-all duration-1000 group-hover:scale-[1.05] brightness-[1.08] contrast-[1.2] saturate-[1.15] filter drop-shadow-[0_0_30px_rgba(255,94,0,0.4)]"
-                  style={{ 
-                    imageRendering: '-webkit-optimize-contrast',
-                    transform: 'translate3d(0,0,0)',
-                    backfaceVisibility: 'hidden',
-                  }}
-                  referrerPolicy="no-referrer"
-                  loading="eager"
-                />
-                
-                {/* Advanced Light Leak / Lens Flare */}
-                <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-br from-white/10 to-transparent blur-[80px] rotate-45 pointer-events-none z-20" />
-                <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/90 via-transparent to-bg-dark/10 pointer-events-none z-10" />
-                
-                {/* Tech Overlays for 'High Def' feel */}
-                <div className="absolute top-8 right-10 flex flex-col items-end gap-1.5 z-30 hidden md:flex select-none">
-                  <div className="px-2 py-0.5 border border-orange-500/50 rounded-sm bg-orange-500/10 backdrop-blur-md">
-                    <div className="text-[9px] font-mono text-orange-500 font-black uppercase tracking-[0.5em] leading-none">
-                      8K MASTER RECORD
-                    </div>
-                  </div>
-                  <div className="text-[8px] font-mono text-white/40 uppercase tracking-[0.2em]">
-                    SENSITIVITY: HIGH-RANGE
-                  </div>
-                </div>
-                
-                <div className="absolute bottom-8 left-10 flex flex-col items-start gap-2 z-30 hidden md:flex select-none">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-orange-500 animate-pulse shadow-[0_0_10px_#f97316]" />
-                    <span className="text-[9px] font-mono text-orange-400/80 uppercase tracking-widest font-bold">Dynamic HDR Active</span>
-                  </div>
-                  <div className="text-[10px] font-mono text-white/40 uppercase tracking-[0.2em]">
-                    Cinematic Rendering / Logic: 0x4F92
-                  </div>
-                </div>
-              </div>
-            </div>
+
 
             <span className="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-primary/10 text-primary border border-primary/20 text-[10px] md:text-xs font-black uppercase tracking-[0.2em] mb-8 animate-pulse">
               <Zap className="w-4 h-4 fill-primary" /> Alerta: Sua atenção está sendo monetizada
             </span>
+
+            {/* Added Section 1 Image with Neon Glow */}
+            <div className="relative w-full max-w-4xl mx-auto mb-12 group px-4">
+              <div className="absolute inset-0 bg-orange-600/30 blur-[120px] rounded-full -z-10 opacity-60 group-hover:opacity-80 transition-opacity duration-700" />
+              <div className="relative z-10 overflow-hidden rounded-2xl md:rounded-[40px] border-2 border-orange-500/40 shadow-[0_0_50px_rgba(249,115,22,0.4),inset_0_0_30px_rgba(249,115,22,0.1)] bg-bg-dark/40 backdrop-blur-xl group-hover:border-orange-400 group-hover:shadow-[0_0_80px_rgba(249,115,22,0.6),inset_0_0_40px_rgba(249,115,22,0.2)] transition-all duration-700">
+                <img 
+                  src="https://i.ibb.co/B11HLgw/image.png" 
+                  alt="Protocolo Visual"
+                  className="w-full h-auto brightness-[1.1] contrast-[1.1] group-hover:scale-[1.02] transition-transform duration-1000"
+                  loading="eager"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+            </div>
             
             <h1 className="text-4xl md:text-8xl font-display font-black leading-[1] mb-8 tracking-tighter">
               A DISTRAÇÃO <br />
