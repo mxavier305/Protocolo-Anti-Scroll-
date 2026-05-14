@@ -81,6 +81,29 @@ export default function App() {
                 
                 {/* Advanced Light Leak / Lens Flare */}
                 <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-br from-white/10 to-transparent blur-[80px] rotate-45 pointer-events-none z-20" />
+                <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/90 via-transparent to-bg-dark/10 pointer-events-none z-10" />
+                
+                {/* Tech Overlays for 'High Def' feel */}
+                <div className="absolute top-8 right-10 flex flex-col items-end gap-1.5 z-30 hidden md:flex select-none">
+                  <div className="px-2 py-0.5 border border-orange-500/50 rounded-sm bg-orange-500/10 backdrop-blur-md">
+                    <div className="text-[9px] font-mono text-orange-500 font-black uppercase tracking-[0.5em] leading-none">
+                      8K MASTER RECORD
+                    </div>
+                  </div>
+                  <div className="text-[8px] font-mono text-white/40 uppercase tracking-[0.2em]">
+                    SENSITIVITY: HIGH-RANGE
+                  </div>
+                </div>
+                
+                <div className="absolute bottom-8 left-10 flex flex-col items-start gap-2 z-30 hidden md:flex select-none">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-orange-500 animate-pulse shadow-[0_0_10px_#f97316]" />
+                    <span className="text-[9px] font-mono text-orange-400/80 uppercase tracking-widest font-bold">Dynamic HDR Active</span>
+                  </div>
+                  <div className="text-[10px] font-mono text-white/40 uppercase tracking-[0.2em]">
+                    Cinematic Rendering / Logic: 0x4F92
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -873,35 +896,6 @@ export default function App() {
         </div>
       </footer>
 
-      {/* Added Final Visual Anchor at the very end */}
-      <section className="pb-24 px-6 overflow-hidden">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="relative group"
-          >
-            <div className="absolute inset-0 bg-primary/20 blur-[120px] rounded-full -z-10 opacity-30" />
-            <div className="relative z-10 overflow-hidden rounded-[3rem] border border-white/10 shadow-[0_0_80px_rgba(255,94,0,0.2)] bg-bg-dark/40 backdrop-blur-xl">
-              <img 
-                src="https://i.ibb.co/p6zDdHMN/image.png" 
-                alt="Protocolo Master Visual"
-                className="w-full h-auto brightness-[1.08] contrast-[1.2] saturate-[1.15] group-hover:scale-[1.03] transition-transform duration-1000"
-                loading="lazy"
-                style={{ 
-                  imageRendering: '-webkit-optimize-contrast',
-                  transform: 'translate3d(0,0,0)',
-                  backfaceVisibility: 'hidden'
-                }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-bg-dark via-transparent to-transparent opacity-80" />
-            </div>
-          </motion.div>
-        </div>
-      </section>
-      
       {/* Live Social Proof Notification */}
       <LiveFeedback />
     </div>
