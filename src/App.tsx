@@ -69,9 +69,9 @@ export default function App() {
                 <img 
                   src="https://i.ibb.co/p6zDdHMN/image.png" 
                   alt="Protocolo Premium"
-                  className="w-full h-auto transition-all duration-1000 group-hover:scale-[1.02] brightness-110 contrast-110 saturate-110"
+                  className="w-full h-auto transition-all duration-1000 group-hover:scale-[1.05] brightness-[1.08] contrast-[1.2] saturate-[1.15] filter drop-shadow-[0_0_30px_rgba(255,94,0,0.4)]"
                   style={{ 
-                    imageRendering: 'high-quality',
+                    imageRendering: '-webkit-optimize-contrast',
                     transform: 'translate3d(0,0,0)',
                     backfaceVisibility: 'hidden',
                   }}
@@ -907,13 +907,17 @@ export default function App() {
             className="relative group"
           >
             <div className="absolute inset-0 bg-primary/20 blur-[120px] rounded-full -z-10 opacity-30" />
-            <div className="relative z-10 overflow-hidden rounded-[3rem] border border-white/5 shadow-2xl bg-bg-dark/40 backdrop-blur-sm">
+            <div className="relative z-10 overflow-hidden rounded-[3rem] border border-white/10 shadow-[0_0_80px_rgba(255,94,0,0.2)] bg-bg-dark/40 backdrop-blur-xl">
               <img 
                 src="https://i.ibb.co/p6zDdHMN/image.png" 
                 alt="Protocolo Master Visual"
-                className="w-full h-auto brightness-110 contrast-110 saturate-110 group-hover:scale-105 transition-transform duration-1000"
+                className="w-full h-auto brightness-[1.08] contrast-[1.2] saturate-[1.15] group-hover:scale-[1.03] transition-transform duration-1000"
                 loading="lazy"
-                style={{ imageRendering: 'high-quality' }}
+                style={{ 
+                  imageRendering: '-webkit-optimize-contrast',
+                  transform: 'translate3d(0,0,0)',
+                  backfaceVisibility: 'hidden'
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-bg-dark via-transparent to-transparent opacity-80" />
               <div className="absolute bottom-12 left-0 right-0 text-center">
