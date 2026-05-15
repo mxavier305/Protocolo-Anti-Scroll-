@@ -61,7 +61,7 @@ export default function App() {
 
 
             <span className="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-primary/10 text-primary border border-primary/20 text-[10px] md:text-xs font-black uppercase tracking-[0.2em] mb-8 animate-pulse">
-              <Zap className="w-4 h-4 fill-primary" /> Alerta: Sua atenção está sendo monetizada
+              <Zap className="w-4 h-4 fill-cta text-cta drop-shadow-[0_0_10px_rgba(255,94,0,0.8)]" /> Alerta: Sua atenção está sendo monetizada
             </span>
 
             {/* Product Mockup with Vibrant Neon Orange Glow */}
