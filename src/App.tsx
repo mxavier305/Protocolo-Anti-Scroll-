@@ -84,10 +84,11 @@ export default function App() {
               </div>
             </motion.div>
             
-            <h1 className="text-4xl md:text-8xl font-display font-black leading-[1] mb-8 tracking-tighter">
+            <h1 className="text-4xl md:text-8xl font-display font-black leading-[1] mb-4 tracking-tighter">
               A DISTRAÇÃO <br />
               <span className="text-primary italic">TE CUSTA CARO.</span>
             </h1>
+            <p className="text-xl md:text-3xl text-slate-400 mb-8 font-medium italic opacity-90">e você sabe disso.</p>
             
             <p className="text-lg md:text-2xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed md:leading-[1.6]">
               O protocolo neurológico que reprograma seu cérebro para quebrar o vício em dopamina barata <span className="text-white font-bold">em poucos dias.</span>
@@ -99,7 +100,7 @@ export default function App() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={scrollToCheckout}
-                className="w-[90%] md:w-full bg-cta text-bg-dark py-6 md:py-8 rounded-3xl font-black text-xl md:text-2xl transition-all shadow-[0_20px_50px_rgba(255,94,0,0.3)] flex items-center justify-center gap-4 mx-auto"
+                className="w-[90%] md:w-full bg-cta text-bg-dark py-4 md:py-8 rounded-3xl font-black text-lg md:text-2xl transition-all shadow-[0_20px_50px_rgba(255,94,0,0.3)] flex items-center justify-center gap-4 mx-auto"
               >
                 Quero recuperar minhas horas — R$19,90 <ArrowRight className="w-6 h-6" />
               </motion.button>
@@ -302,7 +303,7 @@ export default function App() {
             whileHover={{ scale: 1.02, y: -2 }}
             whileTap={{ scale: 0.98 }}
             onClick={() => document.getElementById('solution')?.scrollIntoView({ behavior: 'smooth' })}
-            className="group relative bg-cta text-bg-dark px-10 py-6 rounded-full font-black text-lg md:text-xl uppercase tracking-tighter shadow-[0_0_50px_rgba(255,94,0,0.3)] hover:shadow-[0_0_70px_rgba(255,94,0,0.5)] transition-all"
+            className="group relative bg-cta text-bg-dark px-8 md:px-10 py-4 md:py-6 rounded-full font-black text-base md:text-xl uppercase tracking-tighter shadow-[0_0_50px_rgba(255,94,0,0.3)] hover:shadow-[0_0_70px_rgba(255,94,0,0.5)] transition-all"
           >
             QUERO ENTENDER COMO SAIR DISSO
             <ArrowRight className="w-6 h-6 inline-block ml-2 group-hover:translate-x-1 transition-transform" />
@@ -359,11 +360,11 @@ export default function App() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={scrollToCheckout}
-                className="w-full bg-cta text-bg-dark py-6 rounded-2xl font-black text-xl shadow-xl mt-12 flex items-center justify-center gap-3"
+                className="w-full bg-cta text-bg-dark py-4 md:py-6 rounded-2xl font-black text-lg md:text-xl shadow-xl mt-12 flex items-center justify-center gap-3"
               >
                 Quero recuperar minhas horas — R$19,90 <ArrowRight className="w-6 h-6" />
               </motion.button>
-              <p className="text-[12px] md:text-[13px] text-slate-400 text-center mt-3 font-medium">⚡ Preço de lançamento — sobe para R$47,90 em breve</p>
+              <p className="text-[12px] md:text-[13px] text-black text-center mt-3 font-medium">⚡ Preço de lançamento — sobe para R$47,90 em breve</p>
             </div>
           </div>
         </div>
@@ -603,7 +604,7 @@ export default function App() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => document.getElementById('checkout')?.scrollIntoView({ behavior: 'smooth' })}
-                className="w-full bg-cta text-bg-dark py-5 rounded-2xl font-bold text-xl transition-all shadow-lg flex items-center justify-center gap-3"
+                className="w-full bg-cta text-bg-dark py-3.5 md:py-5 rounded-2xl font-bold text-lg md:text-xl transition-all shadow-lg flex items-center justify-center gap-3"
               >
                 Quero recuperar minhas horas — R$19,90 <ArrowRight className="w-6 h-6" />
               </motion.button>
@@ -677,7 +678,7 @@ export default function App() {
 
               <a 
                 href={CTA_BUY_URL}
-                className="block w-full bg-cta hover:bg-cta-dark text-bg-dark py-8 rounded-[32px] font-black text-2xl transition-all shadow-[0_15px_40_rgba(255,94,0,0.3)] hover:scale-[1.03] active:scale-[0.97] mb-2"
+                className="block w-full bg-cta hover:bg-cta-dark text-bg-dark py-5 md:py-8 rounded-[32px] font-black text-xl md:text-2xl transition-all shadow-[0_15px_40_rgba(255,94,0,0.3)] hover:scale-[1.03] active:scale-[0.97] mb-2"
               >
                 Quero recuperar minhas horas — R$19,90 →
               </a>
@@ -761,7 +762,7 @@ export default function App() {
         <a 
           href="#checkout"
           onClick={scrollToCheckout}
-          className="inline-flex bg-cta hover:bg-cta-dark text-bg-dark px-8 md:px-16 py-6 md:py-8 rounded-3xl font-bold text-xl md:text-3xl transition-all glow-orange items-center gap-4 hover:scale-102 active:scale-98 shadow-[0_0_60px_rgba(255,94,0,0.2)]"
+          className="inline-flex bg-cta hover:bg-cta-dark text-bg-dark px-6 md:px-16 py-4 md:py-8 rounded-3xl font-bold text-lg md:text-3xl transition-all glow-orange items-center gap-4 hover:scale-102 active:scale-98 shadow-[0_0_60px_rgba(255,94,0,0.2)]"
         >
           Quero recuperar minhas horas — R$19,90 <ArrowRight className="w-8 h-8" />
         </a>
