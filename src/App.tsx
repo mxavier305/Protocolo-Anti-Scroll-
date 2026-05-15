@@ -22,6 +22,7 @@ import {
   Sparkles
 } from 'lucide-react';
 import { motion } from 'motion/react';
+import protocoloPremium from './assets/protocolo-premium.png';
 
 const CTA_BUY_URL = "https://pay.lowify.com.br/checkout?product_id=XorCrD"; // Target URL for purchase
 
@@ -74,7 +75,7 @@ export default function App() {
               <div className="absolute inset-0 bg-orange-600/60 blur-[130px] rounded-full -z-10 animate-pulse" />
               <div className="relative z-10 overflow-hidden rounded-[2rem] md:rounded-[3rem] border border-white/5 shadow-[0_0_80px_rgba(255,94,0,0.5)] bg-bg-dark/40 backdrop-blur-3xl transition-all duration-700 group-hover:shadow-[0_0_130px_rgba(255,94,0,0.8)]">
                 <img 
-                  src="/protocolo-premium.png" 
+                  src={protocoloPremium} 
                   alt="Protocolo Anti-Scroll Banner"
                   className="w-full h-auto brightness-[1.1] contrast-[1.1] group-hover:scale-[1.02] transition-transform duration-1000"
                   loading="eager"
@@ -100,9 +101,10 @@ export default function App() {
                 onClick={scrollToCheckout}
                 className="w-[90%] md:w-full bg-cta text-bg-dark py-6 md:py-8 rounded-3xl font-black text-xl md:text-2xl transition-all shadow-[0_20px_50px_rgba(255,94,0,0.3)] flex items-center justify-center gap-4 mx-auto"
               >
-                QUERO MEU FOCO DE VOLTA <ArrowRight className="w-6 h-6" />
+                Quero recuperar minhas horas — R$19,90 <ArrowRight className="w-6 h-6" />
               </motion.button>
-              <p className="text-[9px] text-slate-600 mt-3 font-medium opacity-80">
+              <p className="text-[12px] md:text-[13px] text-slate-400 text-center mt-3 font-medium">⚡ Preço de lançamento — sobe para R$47,90 em breve</p>
+              <p className="text-[9px] text-slate-600 mt-2 font-medium opacity-80">
                 Acesso imediato após a confirmação
               </p>
               
@@ -359,8 +361,9 @@ export default function App() {
                 onClick={scrollToCheckout}
                 className="w-full bg-cta text-bg-dark py-6 rounded-2xl font-black text-xl shadow-xl mt-12 flex items-center justify-center gap-3"
               >
-                COMEÇAR O PROTOCOLO <ArrowRight className="w-6 h-6" />
+                Quero recuperar minhas horas — R$19,90 <ArrowRight className="w-6 h-6" />
               </motion.button>
+              <p className="text-[12px] md:text-[13px] text-slate-400 text-center mt-3 font-medium">⚡ Preço de lançamento — sobe para R$47,90 em breve</p>
             </div>
           </div>
         </div>
@@ -473,7 +476,7 @@ export default function App() {
             <p className="text-slate-400 uppercase tracking-widest text-sm font-bold">Apenas para quem agir hoje</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
                 title: "🧠 BÔNUS #1: Protocolo Sono Alpha (Desligue sua mente em 10 minutos)",
@@ -602,8 +605,9 @@ export default function App() {
                 onClick={() => document.getElementById('checkout')?.scrollIntoView({ behavior: 'smooth' })}
                 className="w-full bg-cta text-bg-dark py-5 rounded-2xl font-bold text-xl transition-all shadow-lg flex items-center justify-center gap-3"
               >
-                QUERO ESSES RESULTADOS <ArrowRight className="w-6 h-6" />
+                Quero recuperar minhas horas — R$19,90 <ArrowRight className="w-6 h-6" />
               </motion.button>
+              <p className="text-[12px] md:text-[13px] text-slate-400 text-center mt-3 font-medium">⚡ Preço de lançamento — sobe para R$47,90 em breve</p>
             </div>
           </div>
         </div>
@@ -657,12 +661,15 @@ export default function App() {
 
               <div className="mb-10 text-center">
                 <p className="text-slate-400 font-bold uppercase tracking-[0.3em] text-[10px] mb-4">Investimento Único</p>
-                <div className="flex items-center justify-center gap-3">
-                  <span className="text-2xl font-bold text-slate-500 line-through">R$ 97</span>
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-3xl font-black text-primary">R$</span>
-                    <span className="text-8xl md:text-9xl font-display font-black text-primary leading-none tracking-tighter">19</span>
-                    <span className="text-4xl font-black text-primary">,99</span>
+                <div className="flex flex-col items-center justify-center gap-2">
+                  <span className="text-[15px] font-bold text-slate-500 line-through">De: R$ 197,00</span>
+                  <div className="flex items-center justify-center gap-3">
+                    <span className="text-lg md:text-xl text-white font-bold">Por apenas:</span>
+                    <div className="flex items-baseline gap-1">
+                      <span className="text-3xl font-black text-primary">R$</span>
+                      <span className="text-8xl md:text-9xl font-display font-black text-primary leading-none tracking-tighter">19</span>
+                      <span className="text-4xl font-black text-primary">,90</span>
+                    </div>
                   </div>
                 </div>
                 <p className="text-primary/60 text-[10px] font-black uppercase tracking-widest mt-2">Pagamento Único via PIX</p>
@@ -670,10 +677,11 @@ export default function App() {
 
               <a 
                 href={CTA_BUY_URL}
-                className="block w-full bg-cta hover:bg-cta-dark text-bg-dark py-8 rounded-[32px] font-black text-2xl transition-all shadow-[0_15px_40px_rgba(255,94,0,0.3)] hover:scale-[1.03] active:scale-[0.97] mb-8"
+                className="block w-full bg-cta hover:bg-cta-dark text-bg-dark py-8 rounded-[32px] font-black text-2xl transition-all shadow-[0_15px_40_rgba(255,94,0,0.3)] hover:scale-[1.03] active:scale-[0.97] mb-2"
               >
-                QUERO ACESSO IMEDIATO
+                Quero recuperar minhas horas — R$19,90 →
               </a>
+              <p className="text-[12px] md:text-[13px] text-slate-400 text-center mb-8 font-medium">⚡ Preço de lançamento — sobe para R$47,90 em breve</p>
 
               <div className="flex items-center justify-center gap-8 opacity-50 contrast-125 grayscale scale-90">
                 <img src="https://logodownload.org/wp-content/uploads/2020/02/pix-logo.png" className="h-6 object-contain" alt="Pix" />
@@ -755,22 +763,12 @@ export default function App() {
           onClick={scrollToCheckout}
           className="inline-flex bg-cta hover:bg-cta-dark text-bg-dark px-8 md:px-16 py-6 md:py-8 rounded-3xl font-bold text-xl md:text-3xl transition-all glow-orange items-center gap-4 hover:scale-102 active:scale-98 shadow-[0_0_60px_rgba(255,94,0,0.2)]"
         >
-          Quero recuperar meu foco hoje <ArrowRight className="w-8 h-8" />
+          Quero recuperar minhas horas — R$19,90 <ArrowRight className="w-8 h-8" />
         </a>
+        <p className="text-[12px] md:text-[13px] text-slate-400 text-center mt-4 font-medium">⚡ Preço de lançamento — sobe para R$47,90 em breve</p>
 
-        <div className="mt-6 space-y-1 text-slate-500 text-xs md:text-sm flex flex-col items-center opacity-80">
-          <div className="flex items-center gap-1.5">
-            <Zap className="w-3 h-3 md:w-3.5 md:h-3.5 text-primary" /> Acesso imediato
-          </div>
-          <div className="flex items-center gap-1.5">
-            <Clock className="w-3 h-3 md:w-3.5 md:h-3.5 text-primary" /> Aplicação em poucos minutos
-          </div>
-          <div className="flex items-center gap-1.5">
-            <CheckCircle2 className="w-3 h-3 md:w-3.5 md:h-3.5 text-primary" /> Funciona já nos primeiros dias
-          </div>
-          <div className="flex items-center gap-1.5">
-            <Lock className="w-3 h-3 md:w-3.5 md:h-3.5 text-primary" /> Pagamento 100% Seguro & Criptografado
-          </div>
+        <div className="mt-8 text-slate-500 text-[12px] text-center font-medium opacity-80">
+          🔒 Pagamento seguro · 📱 Acesso imediato · ↩️ Garantia de 7 dias
         </div>
       </section>
 
