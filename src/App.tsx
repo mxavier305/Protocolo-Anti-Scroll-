@@ -22,7 +22,7 @@ import {
   Sparkles
 } from 'lucide-react';
 import { motion } from 'motion/react';
-const HERO_IMAGE = "https://imgur.com/a/BaBn05q";
+const HERO_IMAGE = "https://imgur.com/3LROVhJ";
 
 const CTA_BUY_URL = "https://pay.lowify.com.br/checkout?product_id=XorCrD"; // Target URL for purchase
 
