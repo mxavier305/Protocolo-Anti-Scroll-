@@ -22,8 +22,7 @@ import {
   Sparkles
 } from 'lucide-react';
 import { motion } from 'motion/react';
-import protocoloPremium from './assets/protocolo-premium.png';
-
+const HERO_IMAGE = "https://imgur.com/3LROVhJ";
 const CTA_BUY_URL = "https://pay.lowify.com.br/checkout?product_id=XorCrD"; // Target URL for purchase
 
 export default function App() {
@@ -75,7 +74,7 @@ export default function App() {
               <div className="absolute inset-0 bg-orange-600/60 blur-[130px] rounded-full -z-10 animate-pulse" />
               <div className="relative z-10 overflow-hidden rounded-[2rem] md:rounded-[3rem] border border-white/5 shadow-[0_0_80px_rgba(255,94,0,0.5)] bg-bg-dark/40 backdrop-blur-3xl transition-all duration-700 group-hover:shadow-[0_0_130px_rgba(255,94,0,0.8)]">
                 <img 
-                  src={protocoloPremium} 
+                  src={HERO_IMAGE}
                   alt="Protocolo Anti-Scroll Banner"
                   className="w-full h-auto brightness-[1.1] contrast-[1.1] group-hover:scale-[1.02] transition-transform duration-1000"
                   loading="eager"
