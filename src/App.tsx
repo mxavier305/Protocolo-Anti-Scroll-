@@ -67,14 +67,13 @@ export default function App() {
 
 
             
-            <h1 className="text-4xl md:text-8xl font-display font-black leading-[1] mb-4 tracking-tighter">
-              A DISTRAÇÃO <br />
-              <span className="text-primary italic">TE CUSTA CARO.</span>
+            <h1 className="text-4xl md:text-7xl lg:text-8xl font-display font-black leading-[1.1] mb-8 tracking-tight text-balance">
+              Toda vez que você pega o celular <br />
+              <span className="text-primary italic">"por 2 minutos"</span> quem decide é o algoritmo
             </h1>
-            <p className="text-xl md:text-3xl text-slate-400 mb-8 font-medium italic opacity-90">e você sabe disso.</p>
             
-            <p className="text-lg md:text-2xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed md:leading-[1.6]">
-              O protocolo neurológico que reprograma seu cérebro para quebrar o vício em dopamina barata <span className="text-white font-bold">em poucos dias.</span>
+            <p className="text-lg md:text-2xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed md:leading-[1.6] text-balance">
+              Existe um método para reprogramar esse reflexo. <span className="text-white font-bold">E leva menos de uma semana.</span>
             </p>
 
             {/* Hero Mockup V2 */}
@@ -86,9 +85,9 @@ export default function App() {
             >
               <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full -z-10" />
               <div className="relative z-10 overflow-hidden rounded-2xl md:rounded-3xl border-2 border-cta shadow-[0_0_50px_rgba(255,94,0,0.5)]">
-                <img
-                  src="/hero2.png"
-                  alt="Protocolo Premium"
+                <img 
+                  src={heroV2} 
+                  alt="Protocolo Premium" 
                   className="w-full h-auto brightness-[1.05]"
                   loading="eager"
                   referrerPolicy="no-referrer"
@@ -104,9 +103,9 @@ export default function App() {
                 onClick={scrollToCheckout}
                 className="w-[90%] md:w-full bg-cta text-bg-dark py-4 md:py-8 rounded-3xl font-black text-lg md:text-2xl transition-all shadow-[0_20px_50px_rgba(255,94,0,0.3)] flex items-center justify-center gap-4 mx-auto"
               >
-                Quero recuperar minhas horas — R$27,00 <ArrowRight className="w-6 h-6" />
+                Quero ser eu quem decide →
               </motion.button>
-              <p className="text-[12px] md:text-[13px] text-slate-400 text-center mt-3 font-medium">⚡ Preço de lançamento — sobe para R$47,90 em breve</p>
+              <p className="text-[12px] md:text-[13px] text-slate-400 text-center mt-3 font-medium">⚡ Preço de lançamento 27,00 — depois sobe para R$47,90 em breve</p>
               <p className="text-[9px] text-slate-600 mt-2 font-medium opacity-80">
                 Acesso imediato após a confirmação
               </p>
@@ -148,7 +147,7 @@ export default function App() {
             >
               <div className="space-y-4">
                 <span className="text-primary font-black text-xs uppercase tracking-[0.3em]">O Diagnóstico</span>
-                <h2 className="text-4xl md:text-6xl font-display font-black leading-[1.1]">
+                <h2 className="text-4xl md:text-7xl font-display font-black leading-[1.1] tracking-tight text-balance">
                   POR QUE É TÃO <span className="text-primary italic">DIFÍCIL</span> PARAR?
                 </h2>
               </div>
@@ -165,7 +164,7 @@ export default function App() {
                 </p>
 
                 <div className="p-8 bg-primary/5 border-l-4 border-primary rounded-r-3xl">
-                  <p className="text-white font-black italic text-xl md:text-2xl leading-tight">
+                  <p className="text-white font-black italic text-xl md:text-2xl leading-relaxed text-balance">
                     "Eu sinto que minha vida está passando diante dos meus olhos... e eu estou apenas assistindo através de uma tela de 6 polegadas."
                   </p>
                 </div>
@@ -323,7 +322,7 @@ export default function App() {
              <Sparkles className="w-4 h-4" /> Apresentando a Saída
           </div>
           
-          <h2 className="text-5xl md:text-8xl mb-8 font-display font-black tracking-tight leading-none text-white">
+          <h2 className="text-5xl md:text-8xl mb-10 font-display font-black tracking-tight leading-[1.1] text-white text-balance">
             PROTOCOLO <br /> <span className="text-primary italic">ANTI-SCROLL.</span>
           </h2>
           
@@ -353,7 +352,7 @@ export default function App() {
             <div className="bg-primary/90 rounded-[40px] p-10 shadow-[0_30px_60px_rgba(0,229,255,0.2)] flex flex-col justify-between items-center text-center">
               <div className="space-y-4">
                 <span className="text-[10px] font-black uppercase tracking-[0.4em] text-bg-dark/50">A Grande Mudança</span>
-                <p className="text-3xl md:text-4xl font-black text-bg-dark leading-tight">
+                <p className="text-3xl md:text-4xl font-black text-bg-dark leading-[1.2] text-balance">
                   Recupere +4 horas do seu dia. <span className="text-white italic">Todas as semanas.</span>
                 </p>
               </div>
@@ -364,9 +363,9 @@ export default function App() {
                 onClick={scrollToCheckout}
                 className="w-full bg-cta text-bg-dark py-4 md:py-6 rounded-2xl font-black text-lg md:text-xl shadow-xl mt-12 flex items-center justify-center gap-3"
               >
-                Quero recuperar minhas horas — R$27,00 <ArrowRight className="w-6 h-6" />
+                Quero ser eu quem decide →
               </motion.button>
-              <p className="text-[12px] md:text-[13px] text-black text-center mt-3 font-medium">⚡ Preço de lançamento — sobe para R$47,90 em breve</p>
+              <p className="text-[12px] md:text-[13px] text-black text-center mt-3 font-medium">⚡ Preço de lançamento 27,00 — depois sobe para R$47,90 em breve</p>
             </div>
           </div>
         </div>
@@ -608,9 +607,9 @@ export default function App() {
                 onClick={() => document.getElementById('checkout')?.scrollIntoView({ behavior: 'smooth' })}
                 className="w-full bg-cta text-bg-dark py-3.5 md:py-5 rounded-2xl font-bold text-lg md:text-xl transition-all shadow-lg flex items-center justify-center gap-3"
               >
-                Quero recuperar minhas horas — R$27,00 <ArrowRight className="w-6 h-6" />
+                Quero ser eu quem decide →
               </motion.button>
-              <p className="text-[12px] md:text-[13px] text-slate-400 text-center mt-3 font-medium">⚡ Preço de lançamento — sobe para R$47,90 em breve</p>
+              <p className="text-[12px] md:text-[13px] text-slate-400 text-center mt-3 font-medium">⚡ Preço de lançamento 27,00 — depois sobe para R$47,90 em breve</p>
             </div>
           </div>
         </div>
@@ -682,9 +681,9 @@ export default function App() {
                 href={CTA_BUY_URL}
                 className="block w-full bg-cta hover:bg-cta-dark text-bg-dark py-5 md:py-8 rounded-[32px] font-black text-xl md:text-2xl transition-all shadow-[0_15px_40_rgba(255,94,0,0.3)] hover:scale-[1.03] active:scale-[0.97] mb-2"
               >
-                Quero recuperar minhas horas — R$27,00 →
+                Quero ser eu quem decide →
               </a>
-              <p className="text-[12px] md:text-[13px] text-slate-400 text-center mb-8 font-medium">⚡ Preço de lançamento — sobe para R$47,90 em breve</p>
+              <p className="text-[12px] md:text-[13px] text-slate-400 text-center mb-8 font-medium">⚡ Preço de lançamento 27,00 — depois sobe para R$47,90 em breve</p>
 
               <div className="flex items-center justify-center gap-8 opacity-50 contrast-125 grayscale scale-90">
                 <img src="https://logodownload.org/wp-content/uploads/2020/02/pix-logo.png" className="h-6 object-contain" alt="Pix" />
@@ -737,8 +736,8 @@ export default function App() {
           </div>
 
           <div>
-            <h2 className="text-3xl mb-4 font-display font-black">Garantia Blindada de <span className="text-primary">7 Dias</span></h2>
-            <p className="text-slate-400 leading-relaxed italic text-lg md:text-xl">
+            <h2 className="text-3xl mb-6 font-display font-black tracking-tight text-balance">Garantia Blindada de <span className="text-primary">7 Dias</span></h2>
+            <p className="text-slate-400 leading-relaxed italic text-lg md:text-xl text-balance">
               "Eu confio tanto no meu método que te dou 7 dias de teste completo. Se não sentir diferença, um e-mail — e eu devolvo tudo. <span className="text-white font-bold tracking-tight">O risco é 100% meu.</span>"
             </p>
           </div>
@@ -747,7 +746,7 @@ export default function App() {
 
       {/* Final CTA */}
       <section className="py-20 px-6 text-center">
-        <h2 className="text-4xl md:text-6xl font-display mb-10 max-w-4xl mx-auto leading-tight">
+        <h2 className="text-4xl md:text-6xl font-display font-black mb-10 max-w-4xl mx-auto leading-[1.1] tracking-tight text-balance">
           A próxima vez que você pegar o celular… <br />
           <span className="text-primary italic">ou você controla… ou você é controlado.</span>
         </h2>
@@ -766,9 +765,9 @@ export default function App() {
           onClick={scrollToCheckout}
           className="inline-flex bg-cta hover:bg-cta-dark text-bg-dark px-6 md:px-16 py-4 md:py-8 rounded-3xl font-bold text-lg md:text-3xl transition-all glow-orange items-center gap-4 hover:scale-102 active:scale-98 shadow-[0_0_60px_rgba(255,94,0,0.2)]"
         >
-          Quero recuperar minhas horas — R$27,00 <ArrowRight className="w-8 h-8" />
+          Quero ser eu quem decide →
         </a>
-        <p className="text-[12px] md:text-[13px] text-slate-400 text-center mt-4 font-medium">⚡ Preço de lançamento — sobe para R$47,90 em breve</p>
+        <p className="text-[12px] md:text-[13px] text-slate-400 text-center mt-4 font-medium">⚡ Preço de lançamento 27,00 — depois sobe para R$47,90 em breve</p>
 
         <div className="mt-8 text-slate-500 text-[12px] text-center font-medium opacity-80">
           🔒 Pagamento seguro · 📱 Acesso imediato · ↩️ Garantia de 7 dias
@@ -781,11 +780,13 @@ export default function App() {
           <h2 className="text-3xl text-center mb-10">Perguntas Frequentes</h2>
           <div className="space-y-6">
             {[
-              { q: "Preciso deletar minhas redes sociais?", a: "Não. O método ensina como usar o celular sem perder o controle da sua atenção." },
-              { q: "Tenho dificuldade de foco, funciona para mim?", a: "Sim. O conteúdo foi criado justamente para pessoas que sofrem com distração, procrastinação e excesso de celular." },
-              { q: "Como recebo o acesso?", a: "O acesso é enviado automaticamente logo após a confirmação do pagamento." },
-              { q: "O acesso é vitalício?", a: "Sim. Você poderá acessar o conteúdo quando quiser." },
-              { q: "Em quanto tempo começo a ver resultado?", a: "Muitas pessoas já percebem diferença nos primeiros dias aplicando o método." }
+              { q: "Já tentei parar de usar o celular várias vezes e nunca consegui. Por que isso seria diferente?", a: "Porque tudo que você tentou antes pedia mais força de vontade — e força de vontade é exatamente o que o algoritmo foi projetado para esgotar. Não é fraqueza sua. Pessoas inteligentes, disciplinadas e comprometidas ficam presas nesse ciclo todo dia. O Protocolo Anti-Scroll não compete com o Instagram. Ele muda o que acontece no seu cérebro *antes* de você pegar o celular. É a diferença entre tentar segurar a respiração debaixo d'água e simplesmente sair da água." },
+              { q: "Quanto tempo vou precisar dedicar por dia?", a: "Entre 5 e 15 minutos nos primeiros 7 dias. Depois disso, o protocolo já está rodando — você não precisa mais lembrar de fazer nada. A maioria das pessoas sente a diferença ainda na primeira semana, sem mudar nada na rotina além de aplicar as técnicas no momento certo." },
+              { q: "Funciona para quem usa o celular por trabalho e não pode simplesmente parar?", a: "Sim — e foi exatamente para esse perfil que o protocolo foi desenhado. Você não vai parar de usar o celular. Vai parar de ser usado por ele. A diferença é simples: você abre o aplicativo com intenção e fecha quando termina, em vez de abrir \"por 2 minutos\" e perder uma hora sem saber como." },
+              { q: "Isso é diferente de app de bloqueio, modo foco ou desinstalar o Instagram?", a: "Completamente diferente. Apps de bloqueio e modo foco tratam o sintoma — eles impedem o acesso. O problema é que o reflexo continua lá, e quando o bloqueio cai, o comportamento volta. O Protocolo trabalha no reflexo em si: o momento em que seu cérebro decide pegar o celular antes de você perceber. Quando esse reflexo muda, você não precisa de bloqueio nenhum." },
+              { q: "E se eu comprar e não funcionar para mim?", a: "Você tem 7 dias para aplicar o protocolo e sentir a diferença. Se não funcionar, é só mandar uma mensagem — devolvo 100% do valor sem formulário, sem burocracia, sem precisar explicar nada. O risco é zero da sua parte. O único jeito de perder aqui é não tentar." },
+              { q: "Por que custa só R$27,00 se o problema é tão sério?", a: "Porque o objetivo é que o maior número de pessoas possível consiga aplicar isso — não construir um curso caro que fica na gaveta. Consultórios de terapia cognitivo-comportamental cobram R$200 por sessão para trabalhar exatamente o que esse protocolo entrega. R$27,00 é o preço de um almoço. O tempo que você vai recuperar não tem preço." },
+              { q: "Preciso ter muita disciplina para aplicar o protocolo?", a: "Não. Se precisasse de disciplina, você já teria resolvido isso sozinho. O protocolo foi desenhado especificamente para pessoas que já tentaram ter disciplina e não conseguiram manter. Ele funciona *porque* não depende de esforço consciente — e sim de reprogramar o reflexo que acontece antes da disciplina entrar em ação." }
             ].map((faq, idx) => (
               <details key={idx} className="group bg-card rounded-2xl border border-white/5 p-6 cursor-pointer">
                 <summary className="font-bold flex items-center justify-between list-none">
