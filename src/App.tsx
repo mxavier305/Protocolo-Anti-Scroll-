@@ -87,7 +87,7 @@ export default function App() {
               <div className="relative z-10 overflow-hidden rounded-2xl md:rounded-3xl border-2 border-cta shadow-[0_0_50px_rgba(255,94,0,0.5)]">
                 <img 
                   src="/hero3.png"
-                  alt="Protocolo Premium" 
+                  alt="Protocolo Premium"
                   className="w-full h-auto brightness-[1.05]"
                   loading="eager"
                   referrerPolicy="no-referrer"
