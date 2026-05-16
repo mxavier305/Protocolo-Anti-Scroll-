@@ -15,6 +15,7 @@ import {
   ShieldCheck, 
   ChevronRight,
   ArrowRight,
+  ArrowDown,
   MonitorOff,
   BatteryCharging,
   Users,
@@ -62,18 +63,17 @@ export default function App() {
 
 
             <span className="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-primary/10 text-primary border border-primary/20 text-[10px] md:text-xs font-black uppercase tracking-[0.2em] mb-8 animate-pulse">
-              <Zap className="w-4 h-4 fill-cta text-cta drop-shadow-[0_0_10px_rgba(255,94,0,0.8)]" /> Alerta: Sua atenção está sendo monetizada
+              <Zap className="w-4 h-4 fill-cta text-cta drop-shadow-[0_0_10px_rgba(255,94,0,0.8)]" /> Você não percebe isso enquanto usa o celular…
             </span>
 
 
             
             <h1 className="text-4xl md:text-7xl lg:text-8xl font-display font-black leading-[1.1] mb-8 tracking-tight text-balance">
-              Toda vez que você pega o celular <br />
-              <span className="text-primary italic">"por 2 minutos"</span> quem decide é o algoritmo
+              Existe um padrão invisível que está controlando seu tempo no celular…
             </h1>
             
             <p className="text-lg md:text-2xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed md:leading-[1.6] text-balance">
-              Existe um método para reprogramar esse reflexo. <span className="text-white font-bold">E leva menos de uma semana.</span>
+              E ele funciona porque você não percebe.
             </p>
 
             {/* Hero Mockup V2 */}
@@ -100,12 +100,14 @@ export default function App() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={scrollToCheckout}
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('diagnosis')?.scrollIntoView({ behavior: 'smooth' });
+                }}
                 className="w-[90%] md:w-full bg-cta text-bg-dark py-4 md:py-8 rounded-3xl font-black text-lg md:text-2xl transition-all shadow-[0_20px_50px_rgba(255,94,0,0.3)] flex items-center justify-center gap-4 mx-auto"
               >
-                Quero ser eu quem decide →
+                Descobrir como isso acontece →
               </motion.button>
-              <p className="text-[12px] md:text-[13px] text-slate-400 text-center mt-3 font-medium">⚡ Preço de lançamento 27,00 — depois sobe para R$47,90 em breve</p>
               <p className="text-[9px] text-slate-600 mt-2 font-medium opacity-80">
                 Acesso imediato após a confirmação
               </p>
@@ -135,134 +137,104 @@ export default function App() {
       </section>
 
       {/* Identification Section */}
-      <section className="pt-12 pb-24 bg-slate-950 border-y border-white/5 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,229,255,0.03),transparent)]" />
-        <div className="max-w-5xl mx-auto relative z-10">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="space-y-10"
-            >
-              <div className="space-y-4">
-                <span className="text-primary font-black text-xs uppercase tracking-[0.3em]">O Diagnóstico</span>
-                <h2 className="text-4xl md:text-7xl font-display font-black leading-[1.1] tracking-tight text-balance">
-                  POR QUE É TÃO <span className="text-primary italic">DIFÍCIL</span> PARAR?
-                </h2>
-              </div>
-              
-              <div className="space-y-8 text-lg md:text-xl text-slate-400 leading-relaxed">
-                <p className="flex gap-4">
-                  <span className="text-primary font-bold">01.</span>
-                  <span>Você abre o Instagram <span className="text-white font-bold">"só pra checar uma notificação"</span> e 40 minutos depois ainda está lá.</span>
-                </p>
-
-                <p className="flex gap-4">
-                  <span className="text-primary font-bold">02.</span>
-                  <span>Seu cérebro está viciado em <span className="text-white font-bold italic">micro-recompensas</span> de dopamina que o algoritmo entrega de bandeja.</span>
-                </p>
-
-                <div className="p-8 bg-primary/5 border-l-4 border-primary rounded-r-3xl">
-                  <p className="text-white font-black italic text-xl md:text-2xl leading-relaxed text-balance">
-                    "Eu sinto que minha vida está passando diante dos meus olhos... e eu estou apenas assistindo através de uma tela de 6 polegadas."
-                  </p>
-                </div>
-
-                <div className="pt-6 border-t border-white/5">
-                  <p className="text-sm font-black uppercase tracking-widest text-slate-500 mb-4">A dura realidade:</p>
-                  <p className="text-2xl md:text-3xl text-white font-bold">
-                    O algoritmo é mais <span className="text-primary">inteligente</span> que sua força de vontade.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-
-            <div className="relative">
-               <div className="absolute inset-0 bg-primary/20 blur-[100px] -z-10" />
-               <div className="grid grid-cols-1 gap-6">
-                {[
-                  { icon: <BatteryCharging className="rotate-90" />, title: "Energia Esgotada", desc: "Acordar cansado porque a última coisa que fez foi scrolar." },
-                  { icon: <MonitorOff />, title: "Foco Fragmentado", desc: "Não conseguir ler 5 páginas sem pegar no celular." },
-                  { icon: <Zap />, title: "Ansiedade Constante", desc: "A sensação de que está sempre perdendo algo importante." }
-                ].map((item, idx) => (
-                  <motion.div 
-                    key={idx}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: idx * 0.1 }}
-                    className="bg-card/50 backdrop-blur-sm p-8 rounded-3xl border border-white/10 hover:border-primary/30 transition-colors group"
-                  >
-                    <div className="flex items-center gap-6">
-                      <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-                        {item.icon}
-                      </div>
-                      <div>
-                        <h4 className="font-black text-lg mb-1">{item.title}</h4>
-                        <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Emotional Bridge Section */}
-      <section className="py-16 px-6 bg-bg-dark">
-        <div className="max-w-3xl mx-auto text-center space-y-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="space-y-8"
-          >
-            <div className="space-y-4">
-              <p className="text-xl md:text-3xl text-slate-300 font-medium leading-tight">
-                Quantas vezes você prometeu pra si mesmo que ia parar?
-              </p>
-              <p className="text-xl md:text-3xl text-slate-300 font-medium leading-tight">
-                Quantos projetos ficaram pra depois por causa disso?
-              </p>
-              <p className="text-xl md:text-3xl text-slate-300 font-medium leading-tight">
-                Quantas noites você fechou o celular sentindo que desperdiçou mais um dia?
-              </p>
-            </div>
+      <section id="diagnosis" className="pt-24 pb-32 bg-slate-950 border-y border-white/5 px-6 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,94,0,0.05),transparent)]" />
+        <div className="max-w-4xl mx-auto relative z-10">
+          <div className="text-center space-y-16">
             
-            <div className="flex justify-center py-4">
-              <div className="w-12 h-1 bg-primary/20 rounded-full" />
+            <div className="space-y-4">
+              <span className="text-primary font-black text-xs uppercase tracking-[0.4em]">A Realidade</span>
+              <h2 className="text-4xl md:text-6xl font-display font-black leading-tight tracking-tight">
+                Isso não é falta <br className="md:hidden" /> de <span className="text-primary italic">disciplina.</span>
+              </h2>
             </div>
 
-            <div className="space-y-6">
-              <h3 className="text-3xl md:text-5xl font-display font-bold text-white">
-                Isso não é falta de disciplina. <br/>
-                <span className="text-primary italic">É neurociência.</span>
-              </h3>
+            <div className="grid md:grid-cols-2 gap-12 text-center">
+              <div className="space-y-8">
+                <div className="space-y-4">
+                  <p className="text-slate-500 uppercase tracking-widest font-black text-[10px]">Identificação</p>
+                  <p className="text-xl md:text-2xl text-slate-300 leading-relaxed">
+                    Você pega o celular <span className="text-white font-bold">“só pra checar uma coisa”</span>… <br />
+                    e quando vê, já passou muito mais tempo do que imaginava.
+                  </p>
+                  <p className="text-slate-400">Isso acontece várias vezes por dia.</p>
+                </div>
 
-              <motion.p 
-                initial={{ scale: 0.95, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4, duration:0.6 }}
-                className="text-4xl md:text-7xl font-black text-white/10 uppercase tracking-tighter"
-              >
-                Seu cérebro foi sequestrado.
-              </motion.p>
+                <div className="p-8 bg-cta/5 border-y-2 border-cta/20 rounded-2xl space-y-4">
+                  <p className="text-slate-500 uppercase tracking-widest font-black text-[10px]">Consciência</p>
+                  <p className="text-2xl font-bold text-white leading-tight">
+                    O problema não é você.
+                  </p>
+                  <p className="text-slate-400">
+                    É que seu comportamento está sendo ativado <span className="text-primary font-bold">automaticamente.</span>
+                  </p>
+                </div>
+              </div>
+
+              <div className="space-y-8">
+                <div className="space-y-4">
+                  <p className="text-slate-500 uppercase tracking-widest font-black text-[10px]">Insight</p>
+                  <p className="text-xl md:text-2xl text-slate-300 leading-relaxed">
+                    Você não está tomando decisões conscientes o tempo todo.
+                  </p>
+                  <p className="text-white font-bold italic text-xl">
+                    Você está repetindo um padrão.
+                  </p>
+                </div>
+
+                <div className="space-y-4">
+                  <p className="text-slate-500 uppercase tracking-widest font-black text-[10px]">O Ciclo</p>
+                  <ul className="space-y-3">
+                    {[
+                      "você abre o celular sem perceber",
+                      "entra em apps sem intenção clara",
+                      "perde tempo e só percebe depois",
+                      "promete que vai parar… e repete tudo de novo"
+                    ].map((item, i) => (
+                      <li key={i} className="text-slate-400">
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
-          </motion.div>
+
+            <div className="pt-16 border-t border-white/5 space-y-12">
+              <div className="space-y-4">
+                 <p className="text-slate-500 font-medium italic">E aos poucos isso começa a parecer normal.</p>
+                 <h3 className="text-2xl md:text-4xl font-bold text-white">
+                   Isso não é falta de disciplina. <br />
+                   <span className="text-primary">É um comportamento que pode ser reeducado.</span>
+                 </h3>
+              </div>
+
+              <div className="flex flex-col items-center gap-6 pt-8">
+                <motion.div
+                  animate={{ y: [0, 10, 0] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <ArrowDown className="w-12 h-12 text-cta drop-shadow-[0_0_15px_rgba(255,94,0,0.8)]" />
+                </motion.div>
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
 
       {/* The Problem Section */}
       <section className="py-16 px-6 overflow-hidden">
           <div className="max-w-4xl mx-auto text-center mb-10">
-            <h2 className="text-3xl md:text-5xl mb-6">O Sequestro do seu <span className="text-primary italic">Sistema de Recompensa</span></h2>
-            <p className="text-slate-400 leading-relaxed text-lg max-w-2xl mx-auto">
-              Sua dopamina natural foi hackeada por engenheiros do Vale do Silício. O objetivo? Manter você conectado, custe o que custar.
-            </p>
+            <h2 className="text-3xl md:text-5xl mb-6">O Sequestro do Seu <span className="text-primary italic">Cérebro</span></h2>
+            <div className="space-y-4 max-w-2xl mx-auto">
+              <p className="text-slate-400 leading-relaxed text-lg">
+                Não é falta de força de vontade. Engenheiros do Vale do Silício passaram anos estudando como te manter preso na tela — usando os mesmos princípios dos caça-níqueis.
+              </p>
+              <p className="text-white font-black text-xl italic uppercase tracking-widest">
+                E funcionou.
+              </p>
+            </div>
           </div>
         
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
@@ -306,7 +278,7 @@ export default function App() {
             onClick={() => document.getElementById('solution')?.scrollIntoView({ behavior: 'smooth' })}
             className="group relative bg-cta text-bg-dark px-8 md:px-10 py-4 md:py-6 rounded-full font-black text-base md:text-xl uppercase tracking-tighter shadow-[0_0_50px_rgba(255,94,0,0.3)] hover:shadow-[0_0_70px_rgba(255,94,0,0.5)] transition-all"
           >
-            QUERO ENTENDER COMO SAIR DISSO
+            Descobrir como isso acontece
             <ArrowRight className="w-6 h-6 inline-block ml-2 group-hover:translate-x-1 transition-transform" />
           </motion.button>
         </div>
@@ -326,8 +298,8 @@ export default function App() {
             PROTOCOLO <br /> <span className="text-primary italic">ANTI-SCROLL.</span>
           </h2>
           
-          <p className="text-xl md:text-2xl font-medium mb-16 max-w-3xl mx-auto leading-relaxed text-slate-400">
-            A única metodologia testada por <span className="text-white font-bold">5.240 alunos</span> capaz de hackear o sistema de recompensa do seu cérebro e devolver sua liberdade em poucos dias.
+          <p className="text-xl md:text-2xl font-medium mb-16 max-w-3xl mx-auto leading-relaxed text-slate-400 text-balance">
+            O Protocolo Anti-Scroll é um método simples para começar em 7 dias a interromper esse padrão automático e recuperar o controle da sua atenção.
           </p>
           
           <div className="grid md:grid-cols-2 gap-8 text-left">
@@ -335,15 +307,18 @@ export default function App() {
               <h3 className="text-2xl font-black flex items-center gap-3 text-white">
                 <Brain className="w-6 h-6 text-primary" /> O que você recebe:
               </h3>
-              <div className="space-y-6">
+              <div className="space-y-8">
                 {[
-                  "Plano Executável de 7 Dias",
-                  "Mecanismos de Bloqueio Neural",
-                  "Técnicas de Foco Hiper-Concentrado"
+                  { title: "Protocolo de 7 dias guiado e executável", desc: "Um passo a passo direto para quebrar o padrão de uso automático do celular." },
+                  { title: "Ajustes práticos de ambiente e hábito", desc: "Pequenas mudanças que reduzem os gatilhos que fazem você pegar o celular sem perceber." },
+                  { title: "Estratégias simples de foco", desc: "Técnicas aplicáveis no dia a dia para recuperar concentração e presença." }
                 ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-4 text-lg font-bold text-slate-300">
-                    <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0" />
-                    <span>{item}</span>
+                  <div key={idx} className="flex items-start gap-4">
+                    <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                    <div className="space-y-1">
+                      <p className="text-lg font-bold text-white leading-tight">{item.title}</p>
+                      <p className="text-sm text-slate-400 leading-relaxed">{item.desc}</p>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -363,9 +338,9 @@ export default function App() {
                 onClick={scrollToCheckout}
                 className="w-full bg-cta text-bg-dark py-4 md:py-6 rounded-2xl font-black text-lg md:text-xl shadow-xl mt-12 flex items-center justify-center gap-3"
               >
-                Quero ser eu quem decide →
+                Descobrir como isso acontece →
               </motion.button>
-              <p className="text-[12px] md:text-[13px] text-black text-center mt-3 font-medium">⚡ Preço de lançamento 27,00 — depois sobe para R$47,90 em breve</p>
+
             </div>
           </div>
         </div>
@@ -607,9 +582,8 @@ export default function App() {
                 onClick={() => document.getElementById('checkout')?.scrollIntoView({ behavior: 'smooth' })}
                 className="w-full bg-cta text-bg-dark py-3.5 md:py-5 rounded-2xl font-bold text-lg md:text-xl transition-all shadow-lg flex items-center justify-center gap-3"
               >
-                Quero ser eu quem decide →
+                Descobrir como isso acontece →
               </motion.button>
-              <p className="text-[12px] md:text-[13px] text-slate-400 text-center mt-3 font-medium">⚡ Preço de lançamento 27,00 — depois sobe para R$47,90 em breve</p>
             </div>
           </div>
         </div>
@@ -681,9 +655,9 @@ export default function App() {
                 href={CTA_BUY_URL}
                 className="block w-full bg-cta hover:bg-cta-dark text-bg-dark py-5 md:py-8 rounded-[32px] font-black text-xl md:text-2xl transition-all shadow-[0_15px_40_rgba(255,94,0,0.3)] hover:scale-[1.03] active:scale-[0.97] mb-2"
               >
-                Quero ser eu quem decide →
+                Recuperar meu controle por R$27 →
               </a>
-              <p className="text-[12px] md:text-[13px] text-slate-400 text-center mb-8 font-medium">⚡ Preço de lançamento 27,00 — depois sobe para R$47,90 em breve</p>
+              <p className="text-[12px] md:text-[13px] text-slate-400 text-center mb-8 font-medium">⚡ Preço de lançamento 27,00 — Mas em breve sobe para o valor normal.</p>
 
               <div className="flex items-center justify-center gap-8 opacity-50 contrast-125 grayscale scale-90">
                 <img src="https://logodownload.org/wp-content/uploads/2020/02/pix-logo.png" className="h-6 object-contain" alt="Pix" />
@@ -765,9 +739,9 @@ export default function App() {
           onClick={scrollToCheckout}
           className="inline-flex bg-cta hover:bg-cta-dark text-bg-dark px-6 md:px-16 py-4 md:py-8 rounded-3xl font-bold text-lg md:text-3xl transition-all glow-orange items-center gap-4 hover:scale-102 active:scale-98 shadow-[0_0_60px_rgba(255,94,0,0.2)]"
         >
-          Quero ser eu quem decide →
+          Quero retomar o controle hoje →
         </a>
-        <p className="text-[12px] md:text-[13px] text-slate-400 text-center mt-4 font-medium">⚡ Preço de lançamento 27,00 — depois sobe para R$47,90 em breve</p>
+        <p className="text-[12px] md:text-[13px] text-slate-400 text-center mt-4 font-medium">⚡ Preço de lançamento 27,00 — Mas em breve sobe para o valor normal.</p>
 
         <div className="mt-8 text-slate-500 text-[12px] text-center font-medium opacity-80">
           🔒 Pagamento seguro · 📱 Acesso imediato · ↩️ Garantia de 7 dias
