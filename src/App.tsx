@@ -85,13 +85,12 @@ export default function App() {
             >
               <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full -z-10" />
               <div className="relative z-10 overflow-hidden rounded-2xl md:rounded-3xl border-2 border-cta shadow-[0_0_50px_rgba(255,94,0,0.5)]">
-                <img 
-                  src="https://ibb.co/jZ6ghcMq"
-                  alt="Protocolo Premium"
-                  className="w-full h-auto brightness-[1.05]"
-                  loading="eager"
-                  referrerPolicy="no-referrer"
-                />
+               <img
+  src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop"
+  alt="Protocolo Premium"
+  className="w-full h-full object-cover"
+/>
+                
               </div>
             </motion.div>
 
