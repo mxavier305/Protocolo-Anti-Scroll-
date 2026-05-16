@@ -22,7 +22,7 @@ import {
   Sparkles
 } from 'lucide-react';
 import { motion } from 'motion/react';
-import heroMockup from './assets/hero-mockup.png';
+import heroV2 from './assets/hero-v2.png';
 
 const CTA_BUY_URL = "https://pay.lowify.com.br/checkout?product_id=XorCrD"; // Target URL for purchase
 
@@ -65,25 +65,6 @@ export default function App() {
               <Zap className="w-4 h-4 fill-cta text-cta drop-shadow-[0_0_10px_rgba(255,94,0,0.8)]" /> Alerta: Sua atenção está sendo monetizada
             </span>
 
-            {/* Hero Mockup Image */}
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.3 }}
-              className="relative w-full max-w-4xl mx-auto mb-16 px-4"
-            >
-              <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full -z-10" />
-              <div className="relative z-10 overflow-hidden rounded-2xl md:rounded-3xl border-2 border-cta shadow-[0_0_50px_rgba(255,94,0,0.5)] bg-bg-dark/40 backdrop-blur-xl">
-                <img 
-                  src={heroMockup} 
-                  alt="Protocolo Hero Mockup"
-                  className="w-full h-auto brightness-[1.05]"
-                  loading="eager"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-            </motion.div>
-
 
             
             <h1 className="text-4xl md:text-8xl font-display font-black leading-[1] mb-4 tracking-tighter">
@@ -95,6 +76,25 @@ export default function App() {
             <p className="text-lg md:text-2xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed md:leading-[1.6]">
               O protocolo neurológico que reprograma seu cérebro para quebrar o vício em dopamina barata <span className="text-white font-bold">em poucos dias.</span>
             </p>
+
+            {/* Hero Mockup V2 */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.3 }}
+              className="relative w-full max-w-4xl mx-auto mb-16 px-4"
+            >
+              <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full -z-10" />
+              <div className="relative z-10 overflow-hidden rounded-2xl md:rounded-3xl border-2 border-cta shadow-[0_0_50px_rgba(255,94,0,0.5)]">
+                <img 
+                  src={heroV2} 
+                  alt="Protocolo Premium" 
+                  className="w-full h-auto brightness-[1.05]"
+                  loading="eager"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+            </motion.div>
 
             {/* Mobile-First Primary CTA */}
             <div className="w-full max-w-md mx-auto mb-16">
