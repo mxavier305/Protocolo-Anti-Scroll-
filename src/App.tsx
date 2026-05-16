@@ -149,50 +149,50 @@ export default function App() {
               </h2>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-12 text-center">
-              <div className="space-y-8">
+            <div className="grid md:grid-cols-2 gap-16 text-center">
+              <div className="space-y-12">
                 <div className="space-y-4">
-                  <p className="text-slate-500 uppercase tracking-widest font-black text-[10px]">Identificação</p>
-                  <p className="text-xl md:text-2xl text-slate-300 leading-relaxed">
+                  <p className="text-primary/50 uppercase tracking-[0.3em] font-black text-[10px]">01. Identificação</p>
+                  <p className="text-xl text-slate-300 leading-relaxed">
                     Você pega o celular <span className="text-white font-bold">“só pra checar uma coisa”</span>… <br />
-                    e quando vê, já passou muito mais tempo do que imaginava.
+                    e quando vê, já perdeu o controle do seu tempo.
                   </p>
-                  <p className="text-slate-400">Isso acontece várias vezes por dia.</p>
+                  <p className="text-sm text-slate-500 italic">Isso acontece repetidamente, todos os dias.</p>
                 </div>
 
-                <div className="p-8 bg-cta/5 border-y-2 border-cta/20 rounded-2xl space-y-4">
-                  <p className="text-slate-500 uppercase tracking-widest font-black text-[10px]">Consciência</p>
-                  <p className="text-2xl font-bold text-white leading-tight">
+                <div className="p-8 bg-white/[0.02] border border-white/5 rounded-3xl space-y-4">
+                  <p className="text-primary/50 uppercase tracking-[0.3em] font-black text-[10px]">02. Consciência</p>
+                  <p className="text-xl font-bold text-white leading-tight">
                     O problema não é você.
                   </p>
                   <p className="text-slate-400">
-                    É que seu comportamento está sendo ativado <span className="text-primary font-bold">automaticamente.</span>
+                    Seu comportamento está sendo ativado de forma <span className="text-primary font-bold">totalmente automática.</span>
                   </p>
                 </div>
               </div>
 
-              <div className="space-y-8">
+              <div className="space-y-12">
                 <div className="space-y-4">
-                  <p className="text-slate-500 uppercase tracking-widest font-black text-[10px]">Insight</p>
-                  <p className="text-xl md:text-2xl text-slate-300 leading-relaxed">
+                  <p className="text-primary/50 uppercase tracking-[0.3em] font-black text-[10px]">03. Insight</p>
+                  <p className="text-xl text-slate-300 leading-relaxed">
                     Você não está tomando decisões conscientes o tempo todo.
                   </p>
-                  <p className="text-white font-bold italic text-xl">
-                    Você está repetindo um padrão.
+                  <p className="text-white font-black italic text-xl uppercase tracking-tighter">
+                    Você está apenas repetindo um padrão.
                   </p>
                 </div>
 
-                <div className="space-y-4">
-                  <p className="text-slate-500 uppercase tracking-widest font-black text-[10px]">O Ciclo</p>
+                <div className="p-8 bg-white/[0.02] border border-white/5 rounded-3xl space-y-4">
+                  <p className="text-primary/50 uppercase tracking-[0.3em] font-black text-[10px]">04. O Ciclo</p>
                   <ul className="space-y-3">
                     {[
-                      "você abre o celular sem perceber",
-                      "entra em apps sem intenção clara",
-                      "perde tempo e só percebe depois",
-                      "promete que vai parar… e repete tudo de novo"
+                      "Abertura impulsiva do celular",
+                      "Uso de apps sem intenção clara",
+                      "Perda de tempo inconsciente",
+                      "Promessa de parar que não se cumpre"
                     ].map((item, i) => (
-                      <li key={i} className="text-slate-400">
-                        <span>{item}</span>
+                      <li key={i} className="text-slate-400 text-sm font-medium">
+                        {item}
                       </li>
                     ))}
                   </ul>
