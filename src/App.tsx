@@ -104,7 +104,7 @@ export default function App() {
                 onClick={scrollToCheckout}
                 className="w-[90%] md:w-full bg-cta text-bg-dark py-4 md:py-8 rounded-3xl font-black text-lg md:text-2xl transition-all shadow-[0_20px_50px_rgba(255,94,0,0.3)] flex items-center justify-center gap-4 mx-auto"
               >
-                Quero recuperar minhas horas — R$19,90 <ArrowRight className="w-6 h-6" />
+                Quero recuperar minhas horas — R$27,00 <ArrowRight className="w-6 h-6" />
               </motion.button>
               <p className="text-[12px] md:text-[13px] text-slate-400 text-center mt-3 font-medium">⚡ Preço de lançamento — sobe para R$47,90 em breve</p>
               <p className="text-[9px] text-slate-600 mt-2 font-medium opacity-80">
@@ -364,7 +364,7 @@ export default function App() {
                 onClick={scrollToCheckout}
                 className="w-full bg-cta text-bg-dark py-4 md:py-6 rounded-2xl font-black text-lg md:text-xl shadow-xl mt-12 flex items-center justify-center gap-3"
               >
-                Quero recuperar minhas horas — R$19,90 <ArrowRight className="w-6 h-6" />
+                Quero recuperar minhas horas — R$27,00 <ArrowRight className="w-6 h-6" />
               </motion.button>
               <p className="text-[12px] md:text-[13px] text-black text-center mt-3 font-medium">⚡ Preço de lançamento — sobe para R$47,90 em breve</p>
             </div>
@@ -608,7 +608,7 @@ export default function App() {
                 onClick={() => document.getElementById('checkout')?.scrollIntoView({ behavior: 'smooth' })}
                 className="w-full bg-cta text-bg-dark py-3.5 md:py-5 rounded-2xl font-bold text-lg md:text-xl transition-all shadow-lg flex items-center justify-center gap-3"
               >
-                Quero recuperar minhas horas — R$19,90 <ArrowRight className="w-6 h-6" />
+                Quero recuperar minhas horas — R$27,00 <ArrowRight className="w-6 h-6" />
               </motion.button>
               <p className="text-[12px] md:text-[13px] text-slate-400 text-center mt-3 font-medium">⚡ Preço de lançamento — sobe para R$47,90 em breve</p>
             </div>
@@ -670,8 +670,8 @@ export default function App() {
                     <span className="text-lg md:text-xl text-white font-bold">Por apenas:</span>
                     <div className="flex items-baseline gap-1">
                       <span className="text-3xl font-black text-primary">R$</span>
-                      <span className="text-8xl md:text-9xl font-display font-black text-primary leading-none tracking-tighter">19</span>
-                      <span className="text-4xl font-black text-primary">,90</span>
+                      <span className="text-8xl md:text-9xl font-display font-black text-primary leading-none tracking-tighter">27</span>
+                      <span className="text-4xl font-black text-primary">,00</span>
                     </div>
                   </div>
                 </div>
@@ -682,7 +682,7 @@ export default function App() {
                 href={CTA_BUY_URL}
                 className="block w-full bg-cta hover:bg-cta-dark text-bg-dark py-5 md:py-8 rounded-[32px] font-black text-xl md:text-2xl transition-all shadow-[0_15px_40_rgba(255,94,0,0.3)] hover:scale-[1.03] active:scale-[0.97] mb-2"
               >
-                Quero recuperar minhas horas — R$19,90 →
+                Quero recuperar minhas horas — R$27,00 →
               </a>
               <p className="text-[12px] md:text-[13px] text-slate-400 text-center mb-8 font-medium">⚡ Preço de lançamento — sobe para R$47,90 em breve</p>
 
@@ -766,7 +766,7 @@ export default function App() {
           onClick={scrollToCheckout}
           className="inline-flex bg-cta hover:bg-cta-dark text-bg-dark px-6 md:px-16 py-4 md:py-8 rounded-3xl font-bold text-lg md:text-3xl transition-all glow-orange items-center gap-4 hover:scale-102 active:scale-98 shadow-[0_0_60px_rgba(255,94,0,0.2)]"
         >
-          Quero recuperar minhas horas — R$19,90 <ArrowRight className="w-8 h-8" />
+          Quero recuperar minhas horas — R$27,00 <ArrowRight className="w-8 h-8" />
         </a>
         <p className="text-[12px] md:text-[13px] text-slate-400 text-center mt-4 font-medium">⚡ Preço de lançamento — sobe para R$47,90 em breve</p>
 
